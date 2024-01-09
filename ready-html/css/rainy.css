@@ -1,0 +1,238 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+:root {
+	--index: calc(1vw + 1vh);
+	--transition: 1.5s cubic-bezier(.05, .5, 0, 1);
+}
+@font-face {
+	font-family: kamerik-3d;
+	src: url(../fonts/kamerik205-heavy.woff2);
+	font-weight: 900;
+}
+@font-face {
+	font-family: merriweather-italic-3d;
+	src: url(../fonts/merriweather-regular-italic.woff2);
+}
+body {
+	background-color: #000;
+	color: #fff;
+	font-family: kamerik-3d;
+}
+
+.layers {
+	perspective: 1000px;
+	overflow: hidden;
+}
+.layers__container {
+	height: 100vh;
+	min-height: 500px;
+	transform-style: preserve-3d;
+	transform: rotateX(var(--move-y)) rotateY(var(--move-x));
+	will-change: transform;
+	transition: transform var(--transition);
+}
+.layers__item {
+	position: absolute;
+	inset: -5vw;
+	background-size: cover;
+	background-position: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.layer-1 {
+	transform: translateZ(-55px) scale(1.06);
+}
+.layer-2 {
+	transform: translateZ(80px) scale(.88);
+}
+.layer-3 {
+	transform: translateZ(180px) scale(.8);
+}
+.layer-4 {
+	transform: translateZ(190px) scale(.9);
+}
+.layer-5 {
+	transform: translateZ(300px) scale(.9);
+}
+.layer-6 {
+	transform: translateZ(380px);
+}
+.hero-content {
+	font-size: calc(var(--index) * 2.9);
+	text-align: center;
+	text-transform: uppercase;
+	letter-spacing: calc(var(--index) * -.15);
+	line-height: 1.35em;
+	margin-top: calc(var(--index) * 5.5);
+}
+.hero-content span {
+	display: block;
+}
+.hero-content__p {
+	text-transform: none;
+	font-family: merriweather-italic-3d;
+	letter-spacing: normal;
+	font-size: calc(var(--index) * .73);
+	line-height: 3;
+}
+.button-start {
+	font-family: Arial;
+	font-weight: 600;
+	text-transform: uppercase;
+	font-size: calc(var(--index) * .71);
+	letter-spacing: -.02vw;
+	padding: calc(var(--index) * .7) calc(var(--index) * 1.25);
+	background-color: transparent;
+	color: #fff;
+	border-radius: 10em;
+	border: rgb(255 255 255 / .4) 3px solid;
+	outline: none;
+	cursor: pointer;
+	margin-top: calc(var(--index) * 2.5);
+}
+.layer-4, .layer-5, .layer-6 {
+	pointer-events: none;
+}
+
+
+.form {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	max-width: 350px;
+	padding: 20px;
+	border-radius: 20px;
+	position: relative;
+	background-color: #1a1a1a;
+	color: #fff;
+	border: 1px solid #333;
+}
+
+.title {
+	font-size: 28px;
+	font-weight: 600;
+	letter-spacing: -1px;
+	position: relative;
+	display: flex;
+	align-items: center;
+	padding-left: 30px;
+	color: #006400;
+}
+
+.title::before {
+	width: 18px;
+	height: 18px;
+}
+
+.title::after {
+	width: 18px;
+	height: 18px;
+	animation: pulse 1s linear infinite;
+}
+
+.title::before,
+.title::after {
+	position: absolute;
+	content: "";
+	height: 16px;
+	width: 16px;
+	border-radius: 50%;
+	left: 0px;
+	background-color: #006400;
+}
+
+.message,
+.signin {
+	font-size: 14.5px;
+	color: rgba(255, 255, 255, 0.7);
+}
+
+.signin {
+	text-align: center;
+}
+
+.signin a:hover {
+	text-decoration: underline royalblue;
+}
+
+.signin a {
+	color: #006400;
+}
+
+.flex {
+	display: flex;
+	width: 100%;
+	gap: 6px;
+}
+
+.form label {
+	position: relative;
+}
+
+.form label .input {
+	background-color: #333;
+	color: #fff;
+	width: 100%;
+	padding: 20px 05px 05px 10px;
+	outline: 0;
+	border: 1px solid rgba(105, 105, 105, 0.397);
+	border-radius: 10px;
+}
+
+.form label .input + span {
+	color: rgba(255, 255, 255, 0.5);
+	position: absolute;
+	left: 10px;
+	top: 0px;
+	font-size: 0.9em;
+	cursor: text;
+	transition: 0.3s ease;
+}
+
+.form label .input:placeholder-shown + span {
+	top: 12.5px;
+	font-size: 0.9em;
+}
+
+.form label .input:focus + span,
+.form label .input:valid + span {
+	color: #006400;
+	top: 0px;
+	font-size: 0.7em;
+	font-weight: 600;
+}
+
+.input {
+	font-size: medium;
+}
+
+.submit {
+	border: none;
+	outline: none;
+	padding: 10px;
+	border-radius: 10px;
+	color: #fff;
+	font-size: 16px;
+	transform: .3s ease;
+	background-color: #006400;
+}
+
+.submit:hover {
+	background-color: #228B22;
+}
+
+@keyframes pulse {
+	from {
+		transform: scale(0.9);
+		opacity: 1;
+	}
+
+	to {
+		transform: scale(1.8);
+		opacity: 0;
+	}
+}
