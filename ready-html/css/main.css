@@ -8,3 +8,144 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+
+.button-container {
+    position: relative;
+    margin: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.button {
+    margin: 0 10px;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    padding-block: 0.5rem;
+    padding-inline: 1.25rem;
+    background-color: rgb(47, 79, 79);
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffff;
+    gap: 10px;
+    font-weight: bold;
+    border: 3px solid #ffffff4d;
+    outline: none;
+    overflow: hidden;
+    font-size: 15px;
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+    transition: all 0.3s ease-in-out;
+}
+
+.button:hover {
+    transform: scale(1.05);
+    border-color: #fff9;
+}
+
+.button:hover .icon {
+    transform: translate(4px);
+}
+
+.button:hover::before {
+    animation: shine 1.5s ease-out infinite;
+}
+
+.button::before {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 100%;
+    background-image: linear-gradient(
+            120deg,
+            rgba(255, 255, 255, 0) 30%,
+            rgba(255, 255, 255, 0.8),
+            rgba(255, 255, 255, 0) 70%
+    );
+    top: 0;
+    left: -100px;
+    opacity: 0.6;
+}
+
+@keyframes shine {
+    0% {
+        left: -100px;
+    }
+
+    60% {
+        left: 100%;
+    }
+
+    to {
+        left: 100%;
+    }
+}
+
+
+.card {
+    margin: 50px;
+    width: 190px;
+    height: 254px;
+    padding: 2%;
+    background: rgb(47, 79, 79);
+    border-bottom: 1px solid blueviolet;
+    border-right: 1px solid blueviolet;
+    border-top: 1px solid white;
+    border-left: 1px solid white;
+    transition-duration: 1s;
+    transition-property: border-top,
+    border-left,
+    border-bottom,
+    border-right,
+    box-shadow;
+}
+
+.card:hover {
+    border-top: 2px solid blueviolet;
+    border-left: 2px solid blueviolet;
+    border-bottom: 2px solid rgb(47, 79, 79);
+    border-right: 2px solid rgb(47, 79, 79);
+    box-shadow: rgba(47, 79, 79, 0.4) 5px 5px, rgba(47, 79, 79, 0.3) 10px 10px, rgba(47, 79, 79, 0.2) 15px 15px, rgba(47, 79, 79, 0.1) 20px 20px, rgba(47, 79, 79, 0.05) 25px 25px;
+}
+
+.card__content {
+    font-size: small;
+    text-align: center;
+}
+
+.card__content-heading {
+    color: Gainsboro;
+}
+
+.card__content-body p {
+    color: rgb(220, 220, 220);
+    padding-bottom: 1rem;
+}
+
+.card__content-footer button {
+    background-color: rgb(47, 79, 79);
+    color: grey;
+    font-weight: 700;
+    border-radius: .2rem;
+    border: 1px solid grey;
+    padding: .5rem;
+    margin: 1rem;
+    transition-duration: 1s;
+    transition-property: background-color, color, border;
+}
+
+button:hover {
+    color: white;
+    background-color: rgb(47, 79, 79);
+    border: 1px solid white;
+    box-shadow: rgba(47, 79, 79, 0.27) 0px 0px 0.25em, rgba(47, 79, 79, 0.05) 0px 0.25em 1em;
+}
+
+
+
