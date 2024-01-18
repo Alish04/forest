@@ -71,7 +71,6 @@ body {
 .login-box form a {
     position: relative;
     display: inline-block;
-    padding: 10px 20px;
     font-weight: bold;
     color: #fff;
     font-size: 16px;
@@ -79,7 +78,6 @@ body {
     text-transform: uppercase;
     overflow: hidden;
     transition: .5s;
-    margin-top: 40px;
     letter-spacing: 3px
 }
 
@@ -187,4 +185,14 @@ body {
     background: transparent;
     color: #aaa;
     border-radius: 5px;
+}
+
+button {
+    border: none;
+    outline: none;
+    padding: 10px 17px;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 18px;
+    background-color: #556B2F;
 }
