@@ -10,154 +10,83 @@ body {
 }
 
 
-
-.button-container {
+.container {
+    color: white;
     position: relative;
-    margin: 50px;
-    display: flex;
-    justify-content: space-between;
-    opacity: .79;
+    font-family: sans-serif;
 }
 
-.button {
-    margin: 0 10px;
-    position: relative;
-    transition: all 0.3s ease-in-out;
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
-    padding-block: 0.5rem;
-    padding-inline: 1.25rem;
-    background-color: rgb(47, 79, 79);
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #ffff;
-    gap: 10px;
-    font-weight: bold;
-    border: 3px solid #ffffff4d;
-    outline: none;
-    overflow: hidden;
-    font-size: 15px;
+.container::before,
+.container::after {
+    content: "";
+    background-color: #2F4F4F;
+    position: absolute;
 }
 
-.icon {
-    width: 24px;
-    height: 24px;
-    transition: all 0.3s ease-in-out;
+.container::before {
+    border-radius: 50%;
+    width: 6rem;
+    height: 6rem;
+    top: 30%;
+    right: 7%;
 }
 
-.button:hover {
-    transform: scale(1.05);
-    border-color: #fff9;
-}
-
-.button:hover .icon {
-    transform: translate(4px);
-}
-
-.button:hover::before {
-    animation: shine 1.5s ease-out infinite;
-}
-
-.button::before {
+.container::after {
     content: "";
     position: absolute;
-    width: 100px;
-    height: 100%;
-    background-image: linear-gradient(
-            120deg,
-            rgba(255, 255, 255, 0) 30%,
-            rgba(255, 255, 255, 0.8),
-            rgba(255, 255, 255, 0) 70%
-    );
-    top: 0;
-    left: -100px;
-    opacity: 0.6;
+    height: 3rem;
+    top: 8%;
+    right: 5%;
+    border: 1px solid;
 }
 
-@keyframes shine {
-    0% {
-        left: -100px;
-    }
-
-    60% {
-        left: 100%;
-    }
-
-    to {
-        left: 100%;
-    }
+.container .box {
+    width: 11.875em;
+    height: 15.875em;
+    padding: 1rem;
+    background-color: rgba(47, 79, 79, 0.074);
+    border: 1px solid rgba(47, 79, 79, 0.222);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    border-radius: 0.7rem;
+    transition: all ease 0.3s;
 }
 
-
-
-.card-container {
-    position: relative;
-    margin: 50px;
+.container .box {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    opacity: .79;
 }
 
-.card {
-    margin: 50px;
-    width: 190px;
-    height: 254px;
-    padding: 2%;
-    background: rgb(47, 79, 79);
-    border-radius: 5px;
-    border-bottom: 1px solid Gainsboro;
-    border-right: 1px solid Gainsboro;
-    border-top: 1px solid Gainsboro;
-    border-left: 1px solid Gainsboro;
-    transition-duration: 1s;
-    transition-property: border-top,
-    border-left,
-    border-bottom,
-    border-right,
-    box-shadow;
+.container .box .title {
+    font-size: 2rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
 }
 
-.card:hover {
-    border-top: 2px solid Gainsboro;
-    border-left: 2px solid Gainsboro;
-    border-bottom: 2px solid rgb(47, 79, 79);
-    border-right: 2px solid rgb(47, 79, 79);
-    box-shadow: rgba(47, 79, 79, 0.4) 5px 5px, rgba(47, 79, 79, 0.3) 10px 10px, rgba(47, 79, 79, 0.2) 15px 15px, rgba(47, 79, 79, 0.1) 20px 20px, rgba(47, 79, 79, 0.05) 25px 25px;
+.container .box div strong {
+    display: block;
+    margin-bottom: 0.5rem;
 }
 
-.card__content {
-    font-size: small;
-    text-align: center;
+.container .box div p {
+    margin: 0;
+    font-size: 0.9em;
+    font-weight: 300;
+    letter-spacing: 0.1em;
 }
 
-.card__content-heading {
-    color: Gainsboro;
+.container .box div span {
+    font-size: 0.7rem;
+    font-weight: 300;
 }
 
-.card__content-body p {
-    color: rgb(255, 250, 250);
-    padding-bottom: 1rem;
+.container .box div span:nth-child(3) {
+    font-weight: 500;
+    margin-right: 0.2rem;
 }
 
-.card__content-footer button {
-    background-color: rgb(47, 79, 79);
-    color: grey;
-    font-weight: 700;
-    border-radius: .2rem;
-    border: 1px solid grey;
-    padding: .5rem;
-    margin: 1rem;
-    transition-duration: 1s;
-    transition-property: background-color, color, border;
+.container .box:hover {
+    box-shadow: 0px 0px 20px 1px #2F4F4F;
+    border: 1px solid rgba(47, 79, 79, 0.454);
 }
-
-button:hover {
-    color: white;
-    background-color: rgb(47, 79, 79);
-    border: 1px solid white;
-    box-shadow: rgba(47, 79, 79, 0.27) 0px 0px 0.25em, rgba(47, 79, 79, 0.05) 0px 0.25em 1em;
-}
-
-
-
