@@ -10,3 +10,51 @@ body {
 }
 
 
+.topnav {
+    background-color: #000000;
+    overflow: hidden;
+}
+
+.topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.topnav a:hover {
+    background-color: #2F4F4F;
+    color: black;
+}
+
+.topnav a.active {
+    background-color: #2F4F4F;
+    color: white;
+}
+
+
+.container {
+    display: flex;
+    width: 90%;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.card {
+    background: rgba(0,0,0,.8);
+    box-shadow: 0 15px 25px rgba(47, 79, 79);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(7px);
+    border-radius: 10px;
+    padding: 14rem;
+    margin: 1rem;
+    width: 100%;
+}
+
+.title {
+    text-align: center;
+    margin: 5rem auto;
+    color: #fff;
+}

@@ -37,15 +37,15 @@ body {
 
 
 .container {
-    overflow: hidden;
+    overflow-x: scroll;
     display: flex;
     scroll-snap-type: x mandatory;
     width: 90%;
     margin: 0 auto;
     padding: 0 15px;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(47, 79, 79, 0.12) rgba(0, 0, 0, 0.2);
 }
-
-
 
 .card {
     background: rgba(0,0,0,.8);
