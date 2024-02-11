@@ -84,7 +84,7 @@ app.post("/register", (req, res) => {
 
 
 app.get("/signin", (req, res) => {
-	res.sendFile(path.join(__dirname, "ready-html", "signin.html"));// Замените путь на путь к вашей странице входа
+	res.sendFile(path.join(__dirname, "ready-html", "login.html"));// Замените путь на путь к вашей странице входа
 });
 
 // Роут для обработки входа (POST-запрос)

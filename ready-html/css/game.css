@@ -7,6 +7,7 @@ body {
     background-image: url('/img/dungeon.jpg');
     background-repeat: no-repeat;
     background-size: cover;
+    overflow: hidden;
 }
 
 
@@ -36,45 +37,35 @@ body {
 
 
 .container {
+    overflow-x: scroll;
     display: flex;
+    scroll-snap-type: x mandatory;
     width: 90%;
     margin: 0 auto;
     padding: 0 15px;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(47, 79, 79, 0.12) rgba(0, 0, 0, 0.2);
 }
 
 .card {
     background: rgba(0,0,0,.8);
     box-shadow: 0 15px 25px rgba(47, 79, 79);
-    backdrop-filter: blur(2px);
+    backdrop-filter: blur(7px);
     -webkit-backdrop-filter: blur(7px);
     border-radius: 10px;
-    padding: 14rem;
-    margin: 1rem;
+    padding: 10rem;
+    margin: 5rem;
     width: 100%;
 }
 
 .title {
+    width: 100%;
+    display: inline-block;
+    word-break: break-all;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     text-align: center;
     margin: 5rem auto;
     color: #fff;
-}
-
-.toptext{
-    text-align: center;
-    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-    font-size: 19px;
-    letter-spacing: 0.2px;
-    word-spacing: 2.6px;
-    color: #ffffff;
-    font-weight: 400;
-    text-decoration: overline solid rgb(255, 255, 255);
-    font-style: normal;
-    font-variant: small-caps;
-    text-transform: none;
-}
-
-.text{
-    text-align: center;
-    color: #ffffff;
-    padding-top: 200px;
 }
