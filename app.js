@@ -107,7 +107,7 @@ app.post("/signin", (req, res) => {
 
 		if (user.userPassword === userPassword) {
 			// If password matches
-			res.redirect("/main.html"); // Redirect to main page
+			res.redirect("/lessons.html"); // Redirect to main page
 		} else {
 			// If password does not match
 			res.status(401).send("Неверный пароль.");
