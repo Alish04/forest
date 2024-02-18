@@ -7,6 +7,7 @@ body {
     background-image: url('/img/dungeon.jpg');
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
     overflow-y: scroll; /* На всякий случай, чтобы вертикальный скролл всегда был видимым */
 }
 ::-webkit-scrollbar {
@@ -48,23 +49,7 @@ body {
 }
 
 
-.container {
-    display: flex;
-    width: 90%;
-    margin: 0 auto;
-    padding: 0 15px;
-}
 
-.card {
-    background: rgba(0,0,0,.8);
-    box-shadow: 0 15px 25px rgba(47, 79, 79);
-    backdrop-filter: blur(2px);
-    -webkit-backdrop-filter: blur(7px);
-    border-radius: 10px;
-    padding: 14rem;
-    margin: 1rem;
-    width: 100%;
-}
 
 .title {
     text-align: center;
@@ -87,6 +72,7 @@ body {
 }
 
 .text{
+    font-family: Arial, Helvetica, sans-serif;
     width: 100%;
     padding-top: 20px;
     padding-left: 200px;
@@ -100,6 +86,7 @@ p{
     text-indent: 20px;
     margin-top: 10px; /* Отступ сверху */
     margin-bottom: 2px; /* Отступ снизу */
+    line-height: 1.6;
 }
 
 
