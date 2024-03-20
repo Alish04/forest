@@ -1,207 +1,221 @@
+/* Глобальные стили, сброс стандартных отступов и установка box-sizing для всех элементов */
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 }
+/* Определение кастомных CSS переменных для корневого элемента */
 :root {
-	--index: calc(1vw + 1vh);
-	--text: #e7e7e0;
-	--transition: transform .75s cubic-bezier(.075, .5, 0, 1);
+	--index: calc(1vw + 1vh); /* переменная для расчета размеров, зависящих от размера окна */
+	--text: #e7e7e0; /* переменная для цвета текста */
+	--transition: transform .75s cubic-bezier(.075, .5, 0, 1); /* переменная для анимации */
+}
+/* Подключение шрифтов через @font-face, указание пути и названия шрифта */
+@font-face {
+	font-family: raleway_f; /* Название шрифта для использования в CSS */
+	src: url(../fonts/raleway-regular.woff2); /* Путь к файлу шрифта */
 }
 @font-face {
-	font-family: raleway_f;
-	src: url(../fonts/raleway-regular.woff2);
+	font-family: raleway_f; /* То же семейство шрифта для поддержания единообразия */
+	src: url(../fonts/raleway-black.woff2); /* Путь к файлу шрифта для жирного начертания */
+	font-weight: 900; /* Указание жирности для этого шрифта */
 }
-@font-face {
-	font-family: raleway_f;
-	src: url(../fonts/raleway-black.woff2);
-	font-weight: 900;
-}
+/* Стилизация тела документа */
 body {
-	background-color: #010101;
-	font-family: raleway_f, sans-serif;
-	line-height: 1.55;
+	background-color: #010101; /* Цвет фона */
+	font-family: raleway_f, sans-serif; /* Установка шрифта */
+	line-height: 1.55; /* Межстрочный интервал */
 }
+/* Позиционирование и стилизация главного заголовка */
 .main-header {
 	position: relative;
 }
 .main-header::after {
-	content: '';
-	position: absolute;
-	z-index: 100;
-	width: 100%;
-	height: calc(var(--index) * 10);
-	background-image: url(../img/ground.png);
-	background-size: cover;
+	content: ''; /* Псевдоэлемент для декоративных целей */
+	position: absolute; /* Абсолютное позиционирование относительно родителя */
+	z-index: 100; /* Слой поверх остальных элементов */
+	width: 100%;/* Ширина элемента */
+	height: calc(var(--index) * 10); /* Высота зависит от переменной --index */
+	background-image: url(../img/ground.png); /* Фоновое изображение */
+	background-size: cover; /* Покрытие всей доступной области */
 	background-repeat: no-repeat;
 	background-position: center;
-	bottom: calc(var(--index) * -4.5);
+	bottom: calc(var(--index) * -4.5); /* Позиционирование относительно нижнего края */
 }
+/* Стилизация контейнера с параллакс эффектом */
 .layers {
-	height: 100vh;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	text-align: center;
-	overflow: hidden;
-	position: relative;
+	height: 100vh; /* Высота на весь экран */
+	display: flex; /* Включает flexbox для выравнивания */
+	align-items: center; /* Вертикальное выравнивание */
+	justify-content: center; /* Горизонтальное выравнивание */
+	text-align: center; /* Выравнивание текста по центру */
+	overflow: hidden; /* Скрывает элементы выходящие за рамки контейнера */
+	position: relative; /* Относительное позиционирование для дочерних абсолютных элементов */
 }
+/* Базовые стили для слоев с изображениями */
 .layer {
 	height: 100%;
 	width: 100%;
 	position: absolute;
 	background-size: cover;
 	background-position: center;
-	will-change: transform;
+	will-change: transform; /* Оптимизация для анимаций */
 	z-index: 2;
-	transition: var(--transition);
+	transition: var(--transition); /* Применение переменной для анимации */
 }
+/* Специфичные стили для разных слоев для создания параллакс эффекта */
 .layers__base {
-	transform: translate3d(0, calc(var(--scrollTop) / 1.6), 0);
-	z-index: 0;
+	transform: translate3d(0, calc(var(--scrollTop) / 1.6), 0); /* Сдвигается медленнее, создавая иллюзию удаленности */
+	z-index: 0; /* Находится за другими слоями */
 }
 .layers__middle {
-	transform: translate3d(0, calc(var(--scrollTop) / 2.5), 0);
+	transform: translate3d(0, calc(var(--scrollTop) / 2.5), 0); /* Средняя скорость сдвига для создания ощущения среднего плана */
 }
 .layers__front {
-	transform: translate3d(0, calc(var(--scrollTop) / 5.7), 0);
+	transform: translate3d(0, calc(var(--scrollTop) / 5.7), 0); /* Быстрее всего сдвигается, создавая эффект близости к зрителю */
 }
+/* Стилизация заголовка внутри слоя */
 .layer__header {
-	z-index: 1;
-	transform: translate3d(0, calc(var(--scrollTop) / 2), 0);
-	transition: var(--transition);
-	will-change: transform;
-	text-transform: uppercase;
-	font-weight: 900;
-	color: var(--text);
-	text-shadow: 0 0 15px #9d822b;
+	z-index: 1; /* Устанавливает слой поверх базовых, но под текстом */
+	transform: translate3d(0, calc(var(--scrollTop) / 2), 0); /* Эффект параллакса */
+	transition: var(--transition); /* Плавная анимация */
+	will-change: transform; /* Оптимизация анимаций */
+	text-transform: uppercase; /* Весь текст заглавными буквами */
+	font-weight: 900; /* Жирное начертание */
+	color: var(--text); /* Цвет текста из переменной */
+	text-shadow: 0 0 15px #9d822b; /* Тень текста для лучшей читаемости */
 }
+/* Стилизация названия и подписи в слоях */
 .layers__title {
-	font-size: calc(var(--index) * 2.65);
-	letter-spacing: calc(var(--index) / 2.25);
+	font-size: calc(var(--index) * 2.65); /* Увеличенный размер шрифта для заголовка */
+	letter-spacing: calc(var(--index) / 2.25); /* Регулировка межбуквенного расстояния */
 }
 .layers__caption {
-	font-size: calc(var(--index) / 1.175);
-	letter-spacing: calc(var(--index) / 3.5);
-	margin-top: calc(var(--index) * -.75);
+	font-size: calc(var(--index) / 1.175); /* Меньший размер шрифта для подписи */
+	letter-spacing: calc(var(--index) / 3.5);  /* Меньшее межбуквенное расстояние */
+	margin-top: calc(var(--index) * -.75);  /* Отрицательный отступ сверху для поднятия текста */
 }
+/* Стили для статей с использованием эффекта параллакс */
 .main-article {
-	--main-article-transform: translate3d(0, calc(var(--scrollTop) / -7.5), 0);
-	min-height: 100vh;
-	background-size: cover;
-	background-position: center;
-	color: var(--text);
+	--main-article-transform: translate3d(0, calc(var(--scrollTop) / -7.5), 0); /* Переменная для анимации */
+	min-height: 100vh; /* Минимальная высота на весь экран */
+	background-size: cover; /* Фоновое изображение на весь элемент */
+	background-position: center; /* Центрирование фонового изображения */
+	color: var(--text); /* Цвет текста из переменной */
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	position: relative;
 	text-align: center;
-	/* Update: */
-	top: -1px;
-	z-index: 10;
+	top: -1px; /* Слегка смещено вверх для создания эффекта непрерывности */
+	z-index: 10;  /* Уровень слоя поверх других элементов */
 }
+/* Стилизация заголовка в основной статье */
 .main-article__header {
-	text-transform: uppercase;
-	font-size: calc(var(--index) * 1.8);
-	letter-spacing: calc(var(--index) / 7.5);
-	transform: var(--main-article-transform);
-	transition: var(--transition);
-	will-change: transform;
+	text-transform: uppercase;  /* Преобразование текста в верхний регистр */
+	font-size: calc(var(--index) * 1.8); ; /* Размер шрифта */
+	letter-spacing: calc(var(--index) / 7.5);  /* Межбуквенное расстояние */
+	transform: var(--main-article-transform); /* Трансформация с использованием переменной */
+	transition: var(--transition); /* Анимация с использованием переменной */
+	will-change: transform; /* Оптимизация анимаций */
 }
+/* Стилизация параграфа в основной статье */
 .main-article__paragraph {
-	max-width: calc(var(--index) * 30);
-	font-size: calc(var(--index) * .9);
-	margin-top: calc(var(--index) / 1.25);
-	transform: var(--main-article-transform);
-	transition: var(--transition);
-	will-change: transform;
+	max-width: calc(var(--index) * 30);  /* Максимальная ширина абзаца */
+	font-size: calc(var(--index) * .9); /* Размер шрифта */
+	margin-top: calc(var(--index) / 1.25); /* Верхний отступ */
+	transform: var(--main-article-transform); /* Трансформация с использованием переменной */
+	transition: var(--transition); /* Анимация с использованием переменной */
+	will-change: transform; /* Оптимизация анимаций */
 }
+/* Общие стили для обертки содержимого, оптимизирует анимации transform */
 .content {
 	will-change: transform;
 }
+/* Стили для копирайта в нижней части статьи */
 .copy {
-	position: absolute;
-	bottom: calc(var(--index) * 2.5);
-	opacity: .45;
-	font-size: calc(var(--index) * .75);
-	letter-spacing: calc(var(--index) / 37.5);
+	position: absolute; /* Абсолютное позиционирование относительно ближайшего относительно позиционированного предка */
+	bottom: calc(var(--index) * 2.5); /* Расположение в нижней части элемента */
+	opacity: .45; /* Прозрачность текста для субтильного отображения */
+	font-size: calc(var(--index) * .75); /* Размер шрифта, зависящий от размера экрана */
+	letter-spacing: calc(var(--index) / 37.5); /* Межбуквенное расстояние */
 }
-
+/* Стили для кнопок, включая эффект при наведении */
 button {
-	position: relative;
-	padding: 10px 20px;
-	border-radius: 7px;
-	border: 1px solid rgb(0, 128, 128);
-	font-size: 14px;
-	text-transform: uppercase;
-	font-weight: 600;
-	letter-spacing: 2px;
-	background: transparent;
-	color: #fff;
-	overflow: hidden;
-	box-shadow: 0 0 0 0 transparent;
+	position: relative; /* Относительное позиционирование для псевдоэлементов */
+	padding: 10px 20px; /* Внутренние отступы для размера кнопки */
+	border-radius: 7px; /* Скругление углов кнопки */
+	border: 1px solid rgb(0, 128, 128); /* Цвет границы кнопки */
+	font-size: 14px; /* Размер текста в кнопке */
+	text-transform: uppercase; /* Текст кнопки заглавными буквами */
+	font-weight: 600; /* Жирность текста */
+	letter-spacing: 2px; /* Межбуквенное расстояние */
+	background: transparent; /* Прозрачный фон кнопки */
+	color: #fff; /* Цвет текста кнопки */
+	overflow: hidden; /* Скрывает содержимое выходящее за границы кнопки */
+	box-shadow: 0 0 0 0 transparent; /* Исходное состояние тени кнопки */
 	-webkit-transition: all 0.2s ease-in;
 	-moz-transition: all 0.2s ease-in;
-	transition: all 0.2s ease-in;
-	margin-right: 10px; /* Отступ между кнопками */
+	transition: all 0.2s ease-in; /* Плавная анимация при изменении состояний */
+	margin-right: 10px;
 }
-
+/* Стили для кнопки при наведении */
 button:hover {
-	background: rgb(0, 128, 128);
-	box-shadow: 0 0 30px 5px rgba(0, 139, 139, 0.815);
-	-webkit-transition: all 0.2s ease-out;
-	-moz-transition: all 0.2s ease-out;
-	transition: all 0.2s ease-out;
+	background: rgb(0, 128, 128);  /* Фон кнопки при наведении */
+	box-shadow: 0 0 30px 5px rgba(0, 139, 139, 0.815); /* Тень кнопки при наведении */
+	-webkit-transition: all 0.2s ease-out; /* Плавная анимация при наведении */
+	-moz-transition: all 0.2s ease-out; /* Плавная анимация при наведении */
+	transition: all 0.2s ease-out; /* Плавная анимация при наведении */
 }
-
+/* Стили для анимации волнового эффекта на кнопке при наведении */
 button:hover::before {
+	/* Анимация для создания волнового эффекта */
 	-webkit-animation: sh02 0.5s 0s linear;
 	-moz-animation: sh02 0.5s 0s linear;
 	animation: sh02 0.5s 0s linear;
 }
-
+/* Начальные стили для псевдоэлемента кнопки, используемые для анимации */
 button::before {
-	content: '';
-	display: block;
-	width: 0px;
-	height: 86%;
-	position: absolute;
-	top: 7%;
-	left: 0%;
-	opacity: 0;
-	background: #fff;
-	box-shadow: 0 0 50px 30px #fff;
+	content: ''; /* Необходим для отображения псевдоэлемента */
+	display: block; /* Блочный тип отображения */
+	width: 0px; /* Начальная ширина */
+	height: 86%; /* Высота псевдоэлемента, используемого для анимационного эффекта */
+	position: absolute; /* Абсолютное позиционирование внутри кнопки */
+	top: 7%; /* Отступ сверху для центрирования эффекта внутри кнопки */
+	left: 0%; /* Начальное положение слева */
+	opacity: 0; /* Начальная прозрачность для плавного появления */
+	background: #fff; /* Фон псевдоэлемента, создающего эффект */
+	box-shadow: 0 0 50px 30px #fff; /* Тень для создания более выразительного эффекта */
+	/* Наклон псевдоэлемента для создания динамичного эффекта */
 	-webkit-transform: skewX(-20deg);
 	-moz-transform: skewX(-20deg);
 	-ms-transform: skewX(-20deg);
 	-o-transform: skewX(-20deg);
 	transform: skewX(-20deg);
 }
-
+/* Ключевые кадры для анимации 'sh02', создающей эффект волны при наведении на кнопку */
 @keyframes sh02 {
 	from {
-		opacity: 0;
-		left: 0%;
+		opacity: 0; /* Начальное состояние: полностью прозрачно */
+		left: 0%; /* Начало анимации с левого края */
 	}
-
 	50% {
-		opacity: 1;
+		opacity: 1; /* На полпути анимации элемент полностью непрозрачен */
 	}
-
 	to {
-		opacity: 0;
-		left: 100%;
+		opacity: 0; /* Конечное состояние: снова становится прозрачным */
+		left: 100%; /* Конец анимации - достигает правого края кнопки */
 	}
 }
-
+/* Стили для кнопки в момент нажатия */
 button:active {
-	box-shadow: 0 0 0 0 transparent;
+	box-shadow: 0 0 0 0 transparent; /* Убирает тень для создания эффекта нажатия */
+	/* Плавная анимация для тени */
 	-webkit-transition: box-shadow 0.2s ease-in;
 	-moz-transition: box-shadow 0.2s ease-in;
 	transition: box-shadow 0.2s ease-in;
 }
-
-/* Стиль для второй кнопки */
+/* Удаление правого отступа у второй кнопки для выравнивания пары кнопок */
 button:nth-child(2) {
-	margin-right: 0; /* Сбрасываем отступ для второй кнопки */
+	margin-right: 0; /* Убирает отступ справа для второй кнопки */
 }

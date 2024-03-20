@@ -1,43 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html> <!-- Объявление типа документа, указывает браузеру на использование стандарта HTML5 -->
+<html lang="en"> <!-- Корневой элемент HTML-документа, атрибут lang="en" указывает на основной язык документа -->
 <head>
 
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="UTF-8"> <!-- Мета-тег, указывающий кодировку документа UTF-8 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Мета-тег для совместимости с Internet Explorer -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Мета-тег для корректного отображения на мобильных устройствах -->
 
-	<title>Main</title>
+	<title>Main</title> <!-- Заголовок вкладки браузера -->
 
-	<link rel="stylesheet" href="css/index.css">
-
+	<link rel="stylesheet" href="css/index.css"> <!-- Подключение внешнего файла стилей CSS -->
+	<!-- Подключение внешних JavaScript библиотек с атрибутом defer, который откладывает выполнение скриптов до полной загрузки страницы -->
 	<script src="libs/gsap/gsap.min.js" defer></script>
 	<script src="libs/gsap/ScrollTrigger.min.js" defer></script>
 	<script src="libs/gsap/ScrollSmoother.min.js" defer></script>
 
-	<script rel="script" src="app.js"></script>
+	<script rel="script" src="js/main.js"></script> <!-- Подключение внешнего файла JavaScript -->
 
 </head>
 <body>
 
-	<div class="wrapper">
-		<div class="content">
+	<div class="wrapper"> <!-- Контейнер-обёртка для всего содержимого страницы -->
+		<div class="content"> <!-- Контейнер для основного содержимого страницы -->
 
-			<header class="main-header">
-				<div class="layers">
+			<header class="main-header"> <!-- Секция шапки страницы -->
+				<div class="layers"> <!-- Контейнер для слоёв фоновых изображений или других элементов -->
 					<div class="layer__header">
-						<div class="layers__caption">welcome to forest</div>
-						<div class="layers__title"><h6>Information Security</h6></div>
+						<div class="layers__caption">welcome to forest</div>  <!-- Блок с приветствием -->
+						<div class="layers__title"><h6>Information Security</h6></div> <!-- Заголовок раздела -->
 					</div>
+					<!-- Блоки с фоновыми изображениями, стилизованные через CSS для создания эффекта параллакса или слоёв -->
 					<div class="layer layers__base" style="background-image: url(img/layer-base.png);"></div>
 					<div class="layer layers__middle" style="background-image: url(img/layer-middle.png);"></div>
 					<div class="layer layers__front" style="background-image: url(img/layer-front.png);"></div>
 				</div>
 			</header>
 		
-			<article class="main-article" style="background-image: url(img/dungeon.jpg);">
-				<div class="main-article__content">
-					<h2 class="main-article__header">Добро пожаловать!</h2>
+			<article class="main-article" style="background-image: url(img/dungeon.jpg);"> <!-- Основная статья или секция контента с фоновым изображением -->
+				<div class="main-article__content"> <!-- Контейнер для содержимого статьи -->
+					<h2 class="main-article__header">Добро пожаловать!</h2> <!-- Заголовок статьи -->
 					<p class="main-article__paragraph">Твое фантастическое путешествие начинается здесь и сейчас. Присоединяйся к нам и стань частью этого захватывающего мира информационной безопасности!</p>
+					<!-- Кнопки для навигации -->
 					<button onclick="window.location.href='register.html'">
 						Создать аккаунт
 					</button>
@@ -45,7 +47,7 @@
 						Вход в аккаунт
 					</button>
 				</div>
-				<div class="copy">© Сейткулова Балгын и Кенинбаев Алишер</div>
+				<div class="copy">© Сейткулова Балгын и Кенинбаев Алишер</div> <!-- Подписи -->
 			</article>
 
 		</div>
