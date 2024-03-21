@@ -13,10 +13,20 @@
 
 </head>
 <body>
-<div class="topnav">
-    <a href="lessons.html">Уроки</a>
-    <a class="active" href="game.html">Игры</a>
-</div>
+    <div class="topnav">
+        <a href="lessons.html">Уроки</a>
+        <a class="active" href="game.html">Игры</a>
+    </div>
+    <div class="game-container">
+        <div id="question">Зашифрованное слово: <span id="encryptedWord"></span></div>
+        <div id="options"></div>
+        <button id="submit">Проверить ответ</button>
+        <button id="exit" onclick="window.location.href='game.html'">Выйти из игры</button>
+        <div id="result"></div>
+
+    </div>
+
+    <script src="js/game3.js"></script>
 
 </body>
 </html>
