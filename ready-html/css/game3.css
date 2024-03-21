@@ -38,63 +38,52 @@ body {
 
 
 
-.game-container {
+
+.container {
     background: rgba(0,0,0,.8);
     box-shadow: 0 15px 25px rgba(47, 79, 79);
     backdrop-filter: blur(7px);
     -webkit-backdrop-filter: blur(7px);
     border-radius: 10px;
     padding: 2rem;
-    margin: 9rem 4rem;
     width: 40%;
-    position: center;
+    margin-left: 450px;
+    margin-top: 150px;
 }
 
-#question{
+h2 {
     text-align: center;
-    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-    font-size: 19px;
-    letter-spacing: 0.2px;
-    word-spacing: 3px;
-    color: #ffffff;
-    font-weight: 400;
-    font-style: normal;
-    font-variant: small-caps;
-    text-transform: none;
-}
-
-#result{
-    text-align: center;
-    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-    font-size: 19px;
+    color: #e7e7e0;
     letter-spacing: 0.2px;
     word-spacing: 2.6px;
-    color: #ffffff;
-    font-weight: 400;
-    font-style: normal;
-    font-variant: small-caps;
-    text-transform: none;
 }
 
-#options {
-    margin: 20px 0;
-}
-
-#options div {
+textarea, input, button {
     position: center;
-    cursor: pointer;
-    background-color: #333;
-    width: 40%;
+    width: 50%;
     padding: 10px;
-    margin-bottom: 5px;
-    margin-left: 170px;
+    margin: 10px 0;
     border-radius: 5px;
-    color: #ffffff;
+    border: 1px solid #ddd;
+    margin-left: 140px;
 }
 
-#options div:hover {
-    background-color: rgba(0, 128, 128, 0.3);
+#task {
+    text-align: center;
+    color: #e7e7e0;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    letter-spacing: 0.2px;
+    word-spacing: 2.6px;
 }
+
+#result {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 
 button {
     display: block;
@@ -114,20 +103,4 @@ button:hover {
     background-color: rgba(1, 94, 94, 0.55);
 }
 
-#exit {
-    display: block;
-    width: 50%;
-    padding: 10px;
-    margin-bottom: 10px;
-    margin-left: 140px;
-    border: none;
-    background-color: rgba(217, 83, 79, 0.73);
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 5px;
-}
 
-#exit:hover {
-    background-color: rgba(201, 48, 44, 0.68);
-}

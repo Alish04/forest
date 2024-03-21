@@ -17,16 +17,21 @@
         <a href="lessons.html">Уроки</a>
         <a class="active" href="game.html">Игры</a>
     </div>
-    <div class="game-container">
-        <div id="question">Зашифрованное слово: <span id="encryptedWord"></span></div>
-        <div id="options"></div>
-        <button id="submit">Проверить ответ</button>
-        <button id="exit" onclick="window.location.href='game.html'">Выйти из игры</button>
-        <div id="result"></div>
 
+
+    <div class="container">
+        <h2>Шифр/Дешифр</h2>
+        <p id="task"></p>
+        <input type="text" id="userInput" placeholder="Ваш ответ...">
+        <button onclick="submitAnswer()">Подтвердить</button>
+        <button onclick="changeMode()">Сменить режим</button>
+        <button onclick="window.location.href='game.html'">Выход</button>
+        <h3 id="result"></h3>
     </div>
 
+
     <script src="js/game3.js"></script>
+
 
 </body>
 </html>

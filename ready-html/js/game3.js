@@ -1,95 +1,61 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const words = ["радуга", "сказка", "звезда", "молния", "лунный", "добрый", "лагерь", "сияние", "цветок", "дружба"];
-    const shift = 3;
-    const randomWord = words[Math.floor(Math.random() * words.length)];
-    const encryptedWord = encryptCaesar(randomWord, shift);
-    document.getElementById('encryptedWord').textContent = encryptedWord;
+const words = ["БАБОЧКА", "ЗВЕЗДА", "СКАЗКА", "МЕЧТА", "ВОЛШЕБСТВО", "ЗВЕЗДОПАД", "МАГИЯ", "ЛУНА", "СОЛНЦЕ", "МЕЧТА"];
+const shift = 3;
+let mode = "decipher"; // По умолчанию режим расшифровки
+let selectedWord = "";
+let displayedWord = "";
 
-    const optionsContainer = document.getElementById('options');
-    generateOptions(words, randomWord).forEach(option => {
-        const div = document.createElement('div');
-        div.textContent = option;
-        div.onclick = function () {
-            checkAnswer(option, randomWord);
-        };
-        optionsContainer.appendChild(div);
-    });
-
-    document.getElementById('submit').style.display = 'none';
-});
-
-function encryptCaesar(word, shift) {
-    const alphabet = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя";
-    let encrypted = '';
-    for (let i = 0; i < word.length; i++) {
-        let char = word[i];
-        let index = alphabet.indexOf(char);
-        if (index == -1) {
-            encrypted += char;
-        } else {
-            let shiftedIndex = (index + shift) % alphabet.length;
-            encrypted += alphabet[shiftedIndex];
-        }
-    }
-    return encrypted;
-}
-
-function generateOptions(words, correctWord) {
-    let options = [correctWord];
-    while (options.length < 4) {
-        let option = words[Math.floor(Math.random() * words.length)];
-        if (!options.includes(option)) {
-            options.push(option);
-        }
-    }
-    return options.sort(() => Math.random() - 0.5);
-}
-
-function checkAnswer(option, correctWord) {
-    const result = document.getElementById('result');
-    if (option === correctWord) {
-        result.textContent = "Правильно!";
-        result.style.color = "green";
+function setupGame() {
+    selectedWord = words[Math.floor(Math.random() * words.length)];
+    if (mode === "decipher") {
+        displayedWord = shiftText(selectedWord, shift);
+        document.getElementById('task').innerText = `Расшифруйте слово: ${displayedWord}`;
     } else {
-        result.textContent = "Неправильно. Правильный ответ: " + correctWord;
-        result.style.color = "red";
+        displayedWord = selectedWord;
+        document.getElementById('task').innerText = `Зашифруйте слово: ${displayedWord}`;
     }
-
-    // Скрываем варианты ответов после выбора
-    const optionsContainer = document.getElementById('options');
-    while (optionsContainer.firstChild) {
-        optionsContainer.removeChild(optionsContainer.firstChild);
-    }
-
-    // Показываем кнопку для новой игры
-    const submitButton = document.getElementById('submit');
-    submitButton.textContent = "Новая игра";
-    submitButton.style.display = 'inline-block';
-    submitButton.onclick = function() {
-        window.location.reload(); // Просто перезагружаем страницу для новой игры
-    };
-
-    // Добавляем обработчик для кнопки "Выйти из игры"
-    const exitButton = document.getElementById('exit');
-    exitButton.onclick = function() {
-        // Можно перенаправить пользователя на главную страницу или выполнить другое действие
-        window.location.href = 'game.html'; // Перенаправление на главную страницу
-    };
-
 }
 
-// Вспомогательная функция шифрования методом Цезаря
-function encryptCaesar(word, shift) {
-    const alphabet = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя";
-    let encrypted = '';
-    for (let char of word) {
-        let index = alphabet.indexOf(char);
-        if (index === -1) {
-            encrypted += char; // Если символ не найден в алфавите, просто добавляем его без изменений
+window.onload = setupGame;
+
+function shiftText(text, shift) {
+    return text.split('').map(char => {
+        const code = char.charCodeAt(0);
+        const shifted = ((code - 1072 + shift) % 32) + 1072;
+        return String.fromCharCode(shifted);
+    }).join('');
+}
+
+function submitAnswer() {
+    const userInput = document.getElementById('userInput').value;
+    if (mode === "decipher") {
+        if (userInput.toLowerCase() === selectedWord.toLowerCase()) {
+            document.getElementById('result').innerText = "Правильно!";
+            result.style.color = "green";
         } else {
-            let shiftedIndex = (index + shift) % alphabet.length; // Вычисляем новый индекс с учетом сдвига
-            encrypted += alphabet[shiftedIndex]; // Добавляем зашифрованный символ в результат
+            document.getElementById('result').innerText = "Неправильно, попробуйте снова.";
+            result.style.color = "red";
+        }
+    } else {
+        const expectedEncryptedWord = shiftText(selectedWord, shift);
+        if (userInput.toLowerCase() === expectedEncryptedWord.toLowerCase()) {
+            document.getElementById('result').innerText = "Правильно!";
+        } else {
+            document.getElementById('result').innerText = "Неправильно, попробуйте снова.";
         }
     }
-    return encrypted;
+}
+
+function changeMode() {
+    if (mode === "decipher") {
+        mode = "cipher";
+    } else {
+        mode = "decipher";
+    }
+    document.getElementById('userInput').value = ''; // Очищаем поле ввода
+    document.getElementById('result').innerText = ''; // Очищаем результат
+    setupGame();
+}
+
+function exitGame() {
+    window.location.reload();
 }
