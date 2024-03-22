@@ -18,11 +18,17 @@
         <a class="active" href="game.html">Игры</a>
     </div>
 
-    <h2>Квиз</h2>
-    <div id="quiz-container" style="overflow-y: scroll;"></div>
-    <div id="results-container"><p>Ваш результат: 0 из 10</p></div>
-    <button id="submit-button">Отправить ответы</button>
-    <button onclick="window.location.href='game.html'">Выход</button>
+    <div class="container" id="quiz-container">
+        <div id="question">Вопрос здесь</div>
+        <ul id="answers">
+            <!-- Ответы будут добавлены здесь динамически -->
+        </ul>
+        <button id="retry">Повторить</button>
+        <button id="exit" onclick="window.location.href = 'game.html'">Выход</button>
+    </div>
+    <div class="container" id="result" style="display: none;">
+        <!-- Результаты квиза будут показаны здесь -->
+    </div>
 
     <script src="js/game1.js"></script>
 </body>
