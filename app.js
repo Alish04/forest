@@ -26,6 +26,9 @@ db.connect((err) => {
 	console.log("Успешное подключение к базе данных MySQL");
 });
 
+app.listen(port, () => {
+	console.log(`Сервер запущен на порту ${port}`);
+});
 db.query(`CREATE TABLE IF NOT EXISTS users (
 	id INT AUTO_INCREMENT PRIMARY KEY,
 	firstname VARCHAR(255) NOT NULL,
@@ -116,7 +119,3 @@ app.post("/signin", (req, res) => {
 	});
 });
 
-
-app.listen(port, () => {
-	console.log(`Сервер запущен на порту ${port}`);
-});
