@@ -13,10 +13,30 @@
 
 </head>
 <body>
-<div class="topnav">
-    <a href="lessons.html">Уроки</a>
-    <a class="active" href="game.html">Игры</a>
-</div>
+    <div class="topnav">
+        <a href="lessons.html">Уроки</a>
+        <a class="active" href="game.html">Игры</a>
+    </div>
+
+    <div class="container">
+        <div class="input-section">
+            <input type="text" id="passwordInput" placeholder="Введите ваш пароль">
+        </div>
+        <div class="requirements">
+            <h2>Требования к паролю:</h2>
+            <p>Вы не сможете нажать на кнопку "Закончить", пока не придумаете надежный пароль</p>
+            <ul>
+                <li id="length">Не менее 9 символов</li>
+                <li id="uppercase">Хотя бы одна заглавная буква</li>
+                <li id="number">Хотя бы одна цифра</li>
+                <li id="special">Хотя бы один спецсимвол</li>
+                <li id="notCommon">Не "qwerty" или "1234"</li>
+            </ul>
+        </div>
+        <button id="exitButton" onclick="window.location.href='game.html'">Выход</button>
+    </div>
+    <button id="finishButton" onclick="window.location.href='game.html'">Закончить</button>
+    <script src="js/game2.js"></script>
 
 </body>
 </html>
