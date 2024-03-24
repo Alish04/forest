@@ -13,10 +13,38 @@
 
 </head>
 <body>
-<div class="topnav">
-    <a href="lessons.html">Уроки</a>
-    <a class="active" href="game.html">Игры</a>
-</div>
+    <div class="topnav">
+        <a href="lessons.html">Уроки</a>
+        <a class="active" href="game.html">Игры</a>
+    </div>
+
+    <div class="container">
+        <h1>Симулятор управления доступом</h1>
+        <div id="scenario">
+            <p id="scenarioText">Загрузка сценария...</p>
+        </div>
+        <div id="decision">
+            <h2>Принять решение:</h2>
+            <p>Кому вы предоставите доступ?</p>
+            <select id="accessSelect">
+                <option value="employee1">Технический специалист по безопасности</option>
+                <option value="employee2">Менеджер по документации и маркетингу</option>
+                <option value="employee3">Финансовый аналитик и администратор баз данных</option>
+            </select>
+            <button onclick="makeDecision()">Принять решение</button>
+            <p id="result"></p>
+        </div>
+        <div id="timer">Осталось времени: <span id="time">01:00</span></div>
+        <div id="gameResult" style="display: none;">
+            <h2>Результат:</h2>
+            <p id="score"></p>
+            <p id="explanation"></p>
+            <button onclick="tryAgain()">Повторить еще раз</button>
+            <button onclick=window.location.href='game.html'>Выход</button>
+        </div>
+    </div>
+
+    <script src="js/game4.js"></script>
 
 </body>
 </html>

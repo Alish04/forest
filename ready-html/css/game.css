@@ -36,6 +36,8 @@ body {
     color: white;
 }
 
+
+
 .container {
     display: flex;
     padding: 0px 30px;
@@ -52,17 +54,6 @@ body {
     display: none; /* For WebKit browsers */
 }
 
-.card {
-    background: rgba(0,0,0,.8);
-    box-shadow: 0 15px 25px rgba(47, 79, 79);
-    backdrop-filter: blur(7px);
-    -webkit-backdrop-filter: blur(7px);
-    border-radius: 10px;
-    padding: 9rem;
-    margin: 9rem 4rem;
-    width: 100%;
-}
-
 .title {
     width: 100%;
     display: inline-block;
@@ -73,6 +64,98 @@ body {
     text-align: center;
     margin: 5rem auto;
     color: #fff;
+    background-color: rgba(1, 1, 1, 0.38);
 }
 
+
+
+
+.card {
+    background-color: rgba(0,0,0,.8);
+    box-shadow: 0 15px 25px rgba(47, 79, 79);
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+    border-radius: 10px;
+    padding: 9rem;
+    margin: 9rem 4rem;
+    width: 100%;
+}
+
+.card1 {
+    background-color: rgba(0,0,0,.8);
+    box-shadow: 0 15px 25px rgba(47, 79, 79);
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+    border-radius: 10px;
+    padding: 9rem;
+    margin: 9rem 4rem;
+    width: 100%;
+    background-image: url("../img/дракон.jpeg");
+    background-size: cover;
+}
+
+.card2 {
+    background-color: rgba(0,0,0,.8);
+    box-shadow: 0 15px 25px rgba(47, 79, 79);
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+    border-radius: 10px;
+    padding: 9rem;
+    margin: 9rem 4rem;
+    width: 100%;
+    background-image: url("../img/огонь.jpeg");
+    background-size: cover;
+}
+
+.card3 {
+    background-color: rgba(0,0,0,.8);
+    box-shadow: 0 15px 25px rgba(47, 79, 79);
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+    border-radius: 10px;
+    padding: 9rem;
+    margin: 9rem 4rem;
+    width: 100%;
+    background-image: url("../img/темныйлес.jpeg");
+    background-size: cover;
+}
+
+.card4 {
+    background-color: rgba(0,0,0,.8);
+    box-shadow: 0 15px 25px rgba(47, 79, 79);
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+    border-radius: 10px;
+    padding: 9rem;
+    margin: 9rem 4rem;
+    width: 100%;
+    background-image: url("../img/гоблинлес.jpeg");
+    background-size: cover;
+}
+
+.card5 {
+    background-color: rgba(0,0,0,.8);
+    box-shadow: 0 15px 25px rgba(47, 79, 79);
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+    border-radius: 10px;
+    padding: 9rem;
+    margin: 9rem 4rem;
+    width: 100%;
+    background-image: url("../img/ласт.jpeg");
+    background-size: cover;
+}
+
+.card6 {
+    background-color: rgba(0,0,0,.8);
+    box-shadow: 0 15px 25px rgba(47, 79, 79);
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+    border-radius: 10px;
+    padding: 9rem;
+    margin: 9rem 4rem;
+    width: 100%;
+    background-image: url("../img/лес.jpeg");
+    background-size: cover;
+}
 

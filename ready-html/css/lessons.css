@@ -54,17 +54,6 @@ body {
     display: none; /* For WebKit browsers */
 }
 
-.card {
-    background: rgba(0,0,0,.8);
-    box-shadow: 0 15px 25px rgba(47, 79, 79);
-    backdrop-filter: blur(7px);
-    -webkit-backdrop-filter: blur(7px);
-    border-radius: 10px;
-    padding: 9rem;
-    margin: 9rem 4rem;
-    width: 100%;
-}
-
 .title {
     width: 100%;
     display: inline-block;
@@ -75,29 +64,96 @@ body {
     text-align: center;
     margin: 5rem auto;
     color: #fff;
+    background-color: rgba(1, 1, 1, 0.38);
+}
+
+.card {
+    background-color: rgba(0,0,0,.8);
+    box-shadow: 0 15px 25px rgba(47, 79, 79);
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+    border-radius: 10px;
+    padding: 9rem;
+    margin: 9rem 4rem;
+    width: 100%;
+}
+
+.card1 {
+    background-color: rgba(0,0,0,.8);
+    box-shadow: 0 15px 25px rgba(47, 79, 79);
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+    border-radius: 10px;
+    padding: 9rem;
+    margin: 9rem 4rem;
+    width: 100%;
+    background-image: url("../img/магия.jpeg");
+    background-size: cover;
+}
+
+.card2 {
+    background-color: rgba(0,0,0,.8);
+    box-shadow: 0 15px 25px rgba(47, 79, 79);
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+    border-radius: 10px;
+    padding: 9rem;
+    margin: 9rem 4rem;
+    width: 100%;
+    background-image: url("../img/меч.jpeg");
+    background-size: cover;
+}
+
+.card3 {
+    background-color: rgba(0,0,0,.8);
+    box-shadow: 0 15px 25px rgba(47, 79, 79);
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+    border-radius: 10px;
+    padding: 9rem;
+    margin: 9rem 4rem;
+    width: 100%;
+    background-image: url("../img/книга.jpeg");
+    background-size: cover;
+}
+
+.card4 {
+    background-color: rgba(0,0,0,.8);
+    box-shadow: 0 15px 25px rgba(47, 79, 79);
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+    border-radius: 10px;
+    padding: 9rem;
+    margin: 9rem 4rem;
+    width: 100%;
+    background-image: url("../img/душа.jpeg");
+    background-size: cover;
+}
+
+.card5 {
+    background-color: rgba(0,0,0,.8);
+    box-shadow: 0 15px 25px rgba(47, 79, 79);
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+    border-radius: 10px;
+    padding: 9rem;
+    margin: 9rem 4rem;
+    width: 100%;
+    background-image: url("../img/душа2.jpeg");
+    background-size: cover;
+}
+
+.card6 {
+    background-color: rgba(0,0,0,.8);
+    box-shadow: 0 15px 25px rgba(47, 79, 79);
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+    border-radius: 10px;
+    padding: 9rem;
+    margin: 9rem 4rem;
+    width: 100%;
+    background-image: url("../img/скоро.jpeg");
+    background-size: cover;
 }
 
 
-.loader {
-    width: 48px;
-    height: 48px;
-    background: #353535;
-    display: block;
-    margin: 20px auto;
-    position: relative;
-    box-sizing: border-box;
-    animation: rotationBack 1s ease-in-out infinite reverse;
-}
-
-.loader::before {
-    content: '';
-    box-sizing: border-box;
-    left: 0;
-    top: 0;
-    transform: rotate(45deg);
-    position: absolute;
-    width: 48px;
-    height: 48px;
-    background: #2e2e2e;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
-}
