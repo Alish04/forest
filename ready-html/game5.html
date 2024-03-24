@@ -13,10 +13,45 @@
 
 </head>
 <body>
-<div class="topnav">
-    <a href="lessons.html">Уроки</a>
-    <a class="active" href="game.html">Игры</a>
-</div>
+    <div class="topnav">
+        <a href="lessons.html">Уроки</a>
+        <a class="active" href="game.html">Игры</a>
+    </div>
+
+    <div class="container">
+        <div id="instructions" class="box">
+            <h2>Введение</h2>
+            <p>Ваша миссия - остановить атаку на компанию. Для этого вам нужно будет выступить в роли системного администратора и ввести пароль к запуску зещиты информационной безопасности, но сперва нужно получить доступ к нему. Первая подсказка - пароль скрыт в самом видимом месте, где пальцы чаще всего гуляют, не начиная путешествие с начала.</p>
+        </div>
+        <div id="passwordInput" class="box">
+            <h2>Пароль №1</h2>
+            <input type="text" id="password" placeholder="Пароль">
+            <button onclick="checkPassword()">Отправить</button>
+            <p id="encryptedWord"></p>
+        </div>
+        <div id="decryptionInput" class="box">
+            <h2>Дешифровка</h2>
+            <input type="text" id="decryptedWord" placeholder="Расшифрованное слово">
+            <button onclick="checkDecryptedWord()">Отправить</button>
+            <p id="finalPasswordHint"></p>
+        </div>
+        <div id="finalInput" class="box">
+            <h2>Пароль №2</h2>
+            <input type="text" id="finalPassword" placeholder="Пароль">
+            <button onclick="checkFinalPassword()">Отправить</button>
+            <p id="completionMessage"></p>
+            <div id="exitButtonContainer" style="display:none;">
+                <button id="exitButton" >Выход</button>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="timer" class="timer">
+        <h3>Оставшееся время: <span id="time">10:00</span></h3>
+    </div>
+
+    <script src="js/game5.js"></script>
 
 </body>
 </html>
