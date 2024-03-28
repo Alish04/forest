@@ -110,6 +110,7 @@ function tryAgain() {
 function exit() {
     clearInterval(timerInterval);
     document.getElementById("gameResult").style.display = "none";
+    window.location.href='game.html'
 }
 
 // Load initial scenario and start timer

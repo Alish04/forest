@@ -52,8 +52,7 @@ body {
     border-radius: 10px;
     padding: 2rem;
     width: 40%;
-    margin-left: 450px;
-    margin-top: 150px;
+    margin: 150px auto;
 }
 
 #result {
@@ -110,8 +109,7 @@ button {
     display: block;
     width: 50%;
     padding: 10px;
-    margin-bottom: 10px;
-    margin-left: 140px;
+    margin: 10px auto;
     border: none;
     background-color: rgba(0, 128, 128, 0.49);
     color: white;

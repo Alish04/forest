@@ -39,7 +39,7 @@ body {
 
 .container {
     display: flex;
-    margin-bottom: 20px;
+    margin: 200px auto;
     background: rgba(0,0,0,.8);
     box-shadow: 0 15px 25px rgba(47, 79, 79);
     backdrop-filter: blur(7px);
@@ -47,8 +47,6 @@ body {
     border-radius: 10px;
     padding: 2rem;
     width: 40%;
-    margin-left: 450px;
-    margin-top: 150px;
 }
 
 #passwordInput {
@@ -56,11 +54,19 @@ body {
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #ddd;
-    margin-top: 50px;
 }
 
-.input-section, .requirements {
-    padding: 20px;
+
+.input-section{
+    position: absolute;
+    width: 90%;
+    padding: 10px;
+}
+
+.requirements{
+    position: relative;
+    margin-top: 50px;
+    padding: 10px;
 }
 
 h2 {
@@ -95,6 +101,9 @@ p {
 
 
 #finishButton {
+    position: fixed;
+    right: 105px;
+    bottom: 20px;
     padding: 10px 20px;
     cursor: pointer;
     border: none;

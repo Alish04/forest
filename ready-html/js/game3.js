@@ -57,5 +57,5 @@ function changeMode() {
 }
 
 function exitGame() {
-    window.location.reload();
+    window.location.href='game.html';
 }

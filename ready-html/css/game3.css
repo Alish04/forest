@@ -36,9 +36,6 @@ body {
     color: white;
 }
 
-
-
-
 .container {
     background: rgba(0,0,0,.8);
     box-shadow: 0 15px 25px rgba(47, 79, 79);
@@ -47,8 +44,7 @@ body {
     border-radius: 10px;
     padding: 2rem;
     width: 40%;
-    margin-left: 450px;
-    margin-top: 150px;
+    margin: 150px auto;
 }
 
 h2 {
@@ -59,13 +55,12 @@ h2 {
 }
 
 textarea, input, button {
-    position: center;
+    display: block;
     width: 50%;
+    margin: 10px auto;
     padding: 10px;
-    margin: 10px 0;
     border-radius: 5px;
     border: 1px solid #ddd;
-    margin-left: 140px;
 }
 
 #task {
@@ -89,8 +84,6 @@ button {
     display: block;
     width: 50%;
     padding: 10px;
-    margin-bottom: 10px;
-    margin-left: 140px;
     border: none;
     background-color: rgba(0, 128, 128, 0.49);
     color: white;

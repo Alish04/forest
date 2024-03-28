@@ -42,7 +42,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const exitButton = document.getElementById('exitButton');
     exitButton.addEventListener('click', () => {
-        alert("Выход из игры...");
-        // Для перенаправления на другую страницу можно использовать
+        window.location.href='game.html'
     });
 });
