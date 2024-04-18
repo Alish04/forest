@@ -14,8 +14,6 @@
 <body>
 
     <div class="topnav">
-        <a class="active" href="lessons.html">Уроки</a>
-        <a href="game.html">Игры</a>
     </div>
 
     <div class="textcard">
@@ -99,10 +97,20 @@
 
     </div>
     <div class="done">
-        <button onclick="window.location.href='lessons.html'">
-            Готово
-        </button>
+        <button id="completeLessonBtn">Complete Lesson</button>
     </div>
+
+    <script>
+        document.getElementById('completeLessonBtn').addEventListener('click', function() {
+            let completedLevels = JSON.parse(localStorage.getItem('completedLevels')) || [];
+            if (!completedLevels.includes(1)) {
+                completedLevels.push(1);
+                localStorage.setItem('completedLevels', JSON.stringify(completedLevels));
+            }
+            // Redirect to the connected game
+            window.location.href = "game4.html";
+        });
+    </script>
 
 </body>
 </html>

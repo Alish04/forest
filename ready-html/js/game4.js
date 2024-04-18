@@ -110,10 +110,20 @@ function tryAgain() {
 function exit() {
     clearInterval(timerInterval);
     document.getElementById("gameResult").style.display = "none";
-    window.location.href='game.html'
+    window.location.href='map.html'
 }
 
 // Load initial scenario and start timer
 loadScenario();
 startTimer(60, document.getElementById("time"));
 
+document.getElementById('completeGameBtn').addEventListener('click', function() {
+    // Here we assume level 1 corresponds to game 1
+    let completedLevels = JSON.parse(localStorage.getItem('completedLevels')) || [];
+    if (!completedLevels.includes(1)) {
+        completedLevels.push(1);
+        localStorage.setItem('completedLevels', JSON.stringify(completedLevels));
+    }
+    // Redirect back to the map
+    window.location.href = "../map.html";
+});

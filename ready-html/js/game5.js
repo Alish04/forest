@@ -73,7 +73,7 @@ function checkFinalPassword() {
         const exitButton = document.createElement('button');
         exitButton.textContent = 'Выход';
         exitButton.onclick = function() {
-            window.location.href='../game.html'; // Попытка закрыть текущее окно браузера
+            window.location.href='../map.html'; // Попытка закрыть текущее окно браузера
         };
 
         // Добавляем кнопку выхода на страницу
@@ -83,3 +83,15 @@ function checkFinalPassword() {
         alert('Неверный пароль!');
     }
 }
+
+
+document.getElementById('completeGameBtn').addEventListener('click', function() {
+    // Here we assume level 1 corresponds to game 1
+    let completedLevels = JSON.parse(localStorage.getItem('completedLevels')) || [];
+    if (!completedLevels.includes(1)) {
+        completedLevels.push(1);
+        localStorage.setItem('completedLevels', JSON.stringify(completedLevels));
+    }
+    // Redirect back to the map
+    window.location.href = "../map.html";
+});
