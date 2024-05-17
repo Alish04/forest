@@ -1,3 +1,42 @@
+body, html {
+    margin: 0;
+    width: 100%;
+    height: 100%;/* Ширина элемента */
+    background-image: url(../img/layer-base.png); /* Фоновое изображение */
+    background-size: cover; /* Покрытие всей доступной области */
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+
+.topnav {
+    background-color: rgba(0, 0, 0, 0.35);
+    overflow: hidden;
+}
+
+.topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.topnav a:hover {
+    background: rgba(35, 58, 58, 0.58);
+    color: rgba(242, 242, 242, 0.65);
+    box-shadow: 0 0 30px 5px rgba(35, 58, 58, 0.58);
+}
+
+.topnav a.active {
+    background-color: rgba(47, 79, 79, 0.41);
+    color: white;
+}
+
+
+
 .profile-container {
     max-width: 800px;
     margin: 0 auto;
@@ -49,18 +88,8 @@ button[type="submit"]:hover {
     background-color: #4cae4c;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-body {
-    background-image: url('/img/dungeon.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-}
 
-.login-box {
+.user-box {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -74,7 +103,7 @@ body {
     border-radius: 10px;
 }
 
-.login-box p:first-child {
+.user-box p:first-child {
     margin: 0 0 30px;
     padding: 0;
     color: #fff;
@@ -84,11 +113,8 @@ body {
     letter-spacing: 1px;
 }
 
-.login-box .user-box {
-    position: relative;
-}
 
-.login-box .user-box input {
+.user-box input {
     width: 100%;
     padding: 10px 0;
     font-size: 16px;
@@ -100,7 +126,7 @@ body {
     background: transparent;
 }
 
-.login-box .user-box label {
+.user-box label {
     position: absolute;
     top: 0;
     left: 0;
@@ -111,15 +137,15 @@ body {
     transition: .5s;
 }
 
-.login-box .user-box input:focus ~ label,
-.login-box .user-box input:valid ~ label {
+.user-box input:focus ~ label,
+.user-box input:valid ~ label {
     top: -20px;
     left: 0;
     color: #fff;
     font-size: 12px;
 }
 
-.login-box form a {
+.user-box form a {
     position: relative;
     display: inline-block;
     padding: 10px 20px;
@@ -134,18 +160,18 @@ body {
     letter-spacing: 3px
 }
 
-.login-box a:hover {
+.user-box a:hover {
     background: #fff;
     color: #272727;
     border-radius: 5px;
 }
 
-.login-box a span {
+.user-box a span {
     position: absolute;
     display: block;
 }
 
-.login-box a span:nth-child(1) {
+.user-box a span:nth-child(1) {
     top: 0;
     left: -100%;
     width: 100%;
@@ -164,7 +190,7 @@ body {
     }
 }
 
-.login-box a span:nth-child(2) {
+.user-box a span:nth-child(2) {
     top: -100%;
     right: 0;
     width: 2px;
@@ -184,7 +210,7 @@ body {
     }
 }
 
-.login-box a span:nth-child(3) {
+.user-box a span:nth-child(3) {
     bottom: 0;
     right: -100%;
     width: 100%;
@@ -204,7 +230,7 @@ body {
     }
 }
 
-.login-box a span:nth-child(4) {
+.user-box a span:nth-child(4) {
     bottom: -100%;
     left: 0;
     width: 2px;
@@ -224,29 +250,28 @@ body {
     }
 }
 
-.login-box p:last-child {
+.user-box p:last-child {
     color: #aaa;
     font-size: 14px;
 }
 
-.login-box a.a2 {
+.user-box a.a2 {
     color: #fff;
     text-decoration: none;
 }
 
-.login-box a.a2:hover {
+.user-box a.a2:hover {
     background: transparent;
     color: #aaa;
     border-radius: 5px;
 }
 
-button {
-    border: none;
-    outline: none;
-    padding: 10px 17px;
-    margin-bottom: 10px;
-    border-radius: 10px;
-    color: #fff;
-    font-size: 18px;
-    background-color: #556B2F;
+p {
+    text-align: justify;
+    color: #ffffff;
+    padding-top: 10px;
+    text-indent: 20px;
+    margin-top: 10px; /* Отступ сверху */
+    margin-bottom: 2px; /* Отступ снизу */
+    line-height: 1.6;
 }

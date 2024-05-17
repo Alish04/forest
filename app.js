@@ -109,7 +109,7 @@ app.post("/signin", (req, res) => {
 
 		if (isPasswordCorrect) {
 			// Если пароль совпадает
-			res.redirect("/lessons.html"); // Redirect to main page (временный вариант)
+			res.redirect("/map.html"); // Redirect to main page (временный вариант)
 		} else {
 			// Если пароль не совпадает
 			res.status(401).send("Неверный пароль.");

@@ -100,7 +100,7 @@ p {
 }
 
 
-#finishButton {
+#completeGameBtn {
     position: fixed;
     right: 105px;
     bottom: 20px;
