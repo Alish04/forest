@@ -1,0 +1,182 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-image: url('/img/layer-base.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    overflow-y: scroll; /* На всякий случай, чтобы вертикальный скролл всегда был видимым */
+}
+::-webkit-scrollbar {
+    width: 1px;
+    background: #233a3a;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #233a3a;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #233a3a;
+}
+
+
+.topnav {
+    background-color: rgba(0, 0, 0, 0.35);
+    overflow: hidden;
+}
+
+.topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.topnav a:hover {
+    background: rgba(35, 58, 58, 0.58);
+    color: rgba(242, 242, 242, 0.65);
+    box-shadow: 0 0 30px 5px rgba(35, 58, 58, 0.58);
+}
+
+.topnav a.active {
+    background-color: rgba(47, 79, 79, 0.41);
+    color: white;
+}
+
+
+.textcard{
+    margin-left: 200px;
+    margin-right: 200px;
+}
+
+.title {
+    text-align: center;
+    margin: 10px;
+    color: #fff;
+}
+
+.toptext{
+    text-align: center;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-size: 19px;
+    letter-spacing: 0.2px;
+    word-spacing: 2.6px;
+    color: #ffffff;
+    font-weight: 400;
+    font-style: normal;
+    font-variant: small-caps;
+    text-transform: none;
+}
+
+.text{
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+    padding-top: 5px;
+    padding-left: 70px;
+    padding-right: 70px;
+    padding-bottom: 30px;
+    background: rgba(35, 58, 58, 0.58);
+    border-radius: 10px;
+}
+
+p{
+    text-align: justify;
+    color: #ffffff;
+    padding-top: 10px;
+    text-indent: 20px;
+    margin-top: 10px; /* Отступ сверху */
+    margin-bottom: 2px; /* Отступ снизу */
+    line-height: 1.6;
+}
+
+
+.done{
+    display: flex;
+    width: 90%;
+    margin: 30px;
+    padding-left: 700px;
+}
+
+button {
+    position: relative;
+    padding: 10px 20px;
+    border-radius: 7px;
+    border: 1px solid rgb(0, 128, 128);
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 2px;
+    background: transparent;
+    color: #fff;
+    overflow: hidden;
+    box-shadow: 0 0 0 0 transparent;
+    -webkit-transition: all 0.2s ease-in;
+    -moz-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+    margin-right: 10px; /* Отступ между кнопками */
+}
+
+button:hover {
+    background: rgb(0, 128, 128);
+    box-shadow: 0 0 30px 5px rgba(0, 139, 139, 0.815);
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+}
+
+button:hover::before {
+    -webkit-animation: sh02 0.5s 0s linear;
+    -moz-animation: sh02 0.5s 0s linear;
+    animation: sh02 0.5s 0s linear;
+}
+
+button::before {
+    content: '';
+    display: block;
+    width: 0px;
+    height: 86%;
+    position: absolute;
+    top: 7%;
+    left: 0%;
+    opacity: 0;
+    background: #fff;
+    box-shadow: 0 0 50px 30px #fff;
+    -webkit-transform: skewX(-20deg);
+    -moz-transform: skewX(-20deg);
+    -ms-transform: skewX(-20deg);
+    -o-transform: skewX(-20deg);
+    transform: skewX(-20deg);
+}
+
+@keyframes sh02 {
+    from {
+        opacity: 0;
+        left: 0%;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+        left: 100%;
+    }
+}
+
+button:active {
+    box-shadow: 0 0 0 0 transparent;
+    -webkit-transition: box-shadow 0.2s ease-in;
+    -moz-transition: box-shadow 0.2s ease-in;
+    transition: box-shadow 0.2s ease-in;
+}
+
+
+
+
