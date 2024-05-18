@@ -1,193 +1,145 @@
-var scenarios = [
+let scenarios = [
     {
-        hackerCard : {
-            description : "I am sending you message by using fake ID.",
-            power : 3,
+        hackerCard: {
+            description: "Я отправляю вам сообщение, используя поддельное удостоверение личности.",
+            power: 3,
         },
-        playerCards : [
+        playerCards: [
             {
-                description : "I always reply a person whether i know him/her or not.",
-                power : 1,
+                description: "Я всегда отвечаю человеку, независимо от того, знаю я его или нет.",
+                power: 1,
             },
             {
-                description : "I never reply a person I don't know.",
-                power : 4,
+                description: "Я никогда не отвечаю человеку, которого не знаю.",
+                power: 4,
             },
             {
-                description : "First i will ask him/her than i reply.",
-                power : 2,
+                description: "Сначала я спрошу его/ее, а потом отвечу.",
+                power: 2,
             }
         ]
     },
     {
-        hackerCard : {
-            description : "I asked some information about your friend",
-            power : 3,
+        hackerCard: {
+            description: "Я запросил кое-какую информацию о вашем друге.",
+            power: 3,
         },
-        playerCards : [
+        playerCards: [
             {
-                description : "I will never tell him/her about my friend.",
-                power : 3,
+                description: "Я никогда не расскажу ему/ей о своем друге.",
+                power: 3,
             },
             {
-                description : "I will tell him/her about my freind.",
-                power : 1,
+                description: "Я расскажу ему/ей о своем друге.",
+                power: 1,
             },
             {
-                description : "First i will ask from him/her about my friend.",
-                power : 4,
+                description: "Сначала я спрошу у него/нее о моем друге.",
+                power: 4,
             }
         ]
     },
     {
-        hackerCard : {
-            description : "i want you to send me money because i have all your personal information ",
-            power : 4,
+        hackerCard: {
+            description: "Я хочу, чтобы вы прислали мне деньги, потому что у меня есть вся ваша личная информация.",
+            power: 4,
         },
-        playerCards : [
+        playerCards: [
             {
-                description : "I will send you money.",
-                power : 0,
+                description: "Я пришлю тебе деньги.",
+                power: 0,
             },
             {
-                description : "I will call the police.",
-                power : 4,
+                description: "Я позвоню в полицию.",
+                power: 4,
             },
             {
-                description : "I will not do anything.",
-                power : 2,
+                description: "Я ничего не буду делать.",
+                power: 2,
             }
         ]
     },
     {
-        hackerCard : {
-            description : "I pretend to be your friend and asked you some sensitive information",
-            power : 3,
+        hackerCard: {
+            description: "Я притворился твоим другом и попросил у тебя кое-какую конфиденциальную информацию.",
+            power: 3,
         },
-        playerCards : [
+        playerCards: [
             {
-                description : "I will tell him/her all information.",
-                power : 1,
+                description: "Я сообщу ему/ей всю информацию.",
+                power: 1,
             },
             {
-                description : "I will not tell him .",
-                power : 2,
+                description: "Я ничего ему не скажу.",
+                power: 2,
             },
             {
-                description : "I will tell him personally by meeting him. ",
-                power : 4,
+                description: "Я расскажу ему об этом лично, когда встречусь с ним.",
+                power: 4,
             }
         ]
     },
     {
-        hackerCard : {
-            description : "I will ask you to send me your private images",
-            power : 3,
+        hackerCard: {
+            description: "Я попрошу вас прислать мне ваши личные фотографии.",
+            power: 3,
         },
-        playerCards : [
+        playerCards: [
             {
-                description : "I will never send that to anybody.",
-                power : 3,
+                description: "Я никогда никому этого не отправлю.",
+                power: 3,
             },
             {
-                description : "I will tell my parents regarding this.",
-                power : 4,
+                description: "Я расскажу об этом своим родителям.",
+                power: 4,
             },
             {
-                description : "I will keep it a secret",
-                power : 1,
-            }
-        ]
-    },
-
-    {
-        hackerCard : {
-            description : "I will blackmail you by using some of your older chats",
-            power : 4,
-        },
-        playerCards : [
-            {
-                description : "I will fight with him/her.",
-                power : 2,
-            },
-            {
-                description : "I will do what he want from me",
-                power : 1,
-            },
-            {
-                description : "I will file a case of cyber bullying.",
-                power : 5,
+                description: "Я сохраню это в секрете.",
+                power: 1,
             }
         ]
     },
 
-    // {
-    //   hackerCard : {
-    //     description : "",
-    //     power : 2,
-    //   },
-    //   playerCards : [
-    //     {
-    //       description : "I use Anti-Virus Protection & Firewall to protect my system.",
-    //       power : 4,
-    //     },
-    //     {
-    //       description : "I refused to use your USB as my system was not having Anti-Virus Protection & Firewall.",
-    //       power : 3,
-    //     },
-    //     {
-    //       description : "I used your USB as I am not afraid of my system getting corrupted.",
-    //       power : 1,
-    //     }
-    //   ]
-    // },
-    // {
-    //   hackerCard : {
-    //     description : "Isdfgdhfjgkhhes.",
-    //     power : 2,
-    //   },
-    //   playerCards : [
-    //     {
-    //       description : "You can't because I have turned on Automatic Updates for my operating system.",
-    //       power : 4,
-    //     },
-    //     {
-    //       description : "I use web browsers such as Chrome or Firefox that receive frequent, automatic security updates.",
-    //       power : 3,
-    //     },
-    //     {
-    //       description : "I don't update my softwares nor do I download security updates.",
-    //       power : 1,
-    //     }
-    //   ]
-    //}
+    {
+        hackerCard: {
+            description: "Я буду шантажировать вас, используя некоторые из ваших старых чатов.",
+            power: 4,
+        },
+        playerCards: [
+            {
+                description: "Я буду бороться с ним/ней.",
+                power: 2,
+            },
+            {
+                description: "Я сделаю то, чего он от меня хочет",
+                power: 1,
+            },
+            {
+                description: "Я подам в суд на кибер-травлю.",
+                power: 5,
+            }
+        ]
+    }
 ];
 
-
-var playerLife = 5;
-var hackerLife = 5;
-
-// Message when the game is over
-var hackerWinnerMessage = "Game over: You got hacked!";
-var playerWinnerMessage = "You defeated the hacker!";
-
-
-// Game code starts here
-var playerStartLife = parseInt(playerLife);
-var hackerStartLife = parseInt(hackerLife);
-
-var roundFinished = false;
-var cardSelected = false;
+let playerLife = 5;
+let hackerLife = 5;
+let hackerWinnerMessage = "Game over: You got hacked!";
+let playerWinnerMessage = "You defeated the hacker!";
+let playerStartLife = parseInt(playerLife);
+let hackerStartLife = parseInt(hackerLife);
+let roundFinished = false;
+let cardSelected = false;
 
 updateScores();
 
 document.querySelector(".game-board").classList.add("before-game");
 
-var allCardElements = document.querySelectorAll(".card");
+let allCardElements = document.querySelectorAll(".card");
 
 // Adds click handler to all player card elements
-for(var i = 0; i < allCardElements.length; i++) {
-    var card = allCardElements[i];
+for(let i = 0; i < allCardElements.length; i++) {
+    let card = allCardElements[i];
     if(card.classList.contains("player-card")) {
         card.addEventListener("click",function(e){
             cardClicked(this);
@@ -224,27 +176,27 @@ function cardClicked(cardEl) {
 
 // Shows the power level on the player card
 function revealPlayerPower(){
-    var playerCard = document.querySelector(".played-card");
+    let playerCard = document.querySelector(".played-card");
     playerCard.classList.add("reveal-power");
 }
 
 // Shows the power level on the hacker card
 function revealHackerPower(){
-    var hackerCard = document.querySelector(".hacker-card");
+    let hackerCard = document.querySelector(".hacker-card");
     hackerCard.classList.add("reveal-power");
 }
 
 function compareCards(){
-    var playerCard = document.querySelector(".played-card");
-    var playerPowerEl = playerCard.querySelector(".power");
+    let playerCard = document.querySelector(".played-card");
+    let playerPowerEl = playerCard.querySelector(".power");
 
-    var hackerCard = document.querySelector(".hacker-card");
-    var hackerPowerEl = hackerCard.querySelector(".power");
+    let hackerCard = document.querySelector(".hacker-card");
+    let hackerPowerEl = hackerCard.querySelector(".power");
 
-    var playerPower = parseInt(playerPowerEl.innerHTML);
-    var hackerPower = parseInt(hackerPowerEl.innerHTML);
+    let playerPower = parseInt(playerPowerEl.innerHTML);
+    let hackerPower = parseInt(hackerPowerEl.innerHTML);
 
-    var powerDifference = playerPower - hackerPower;
+    let powerDifference = playerPower - hackerPower;
 
     if (powerDifference < 0) {
         // Player Loses
@@ -292,43 +244,10 @@ function gameOver(winner) {
     }
 }
 
-
-// Starts the game
-function startGame() {
-
-    document.querySelector(".game-board").classList.remove("before-game");
-    document.querySelector(".game-board").classList.add("during-game");
-    playTurn();
+function exitGame() {
+    window.location.href = '../map.html';
 }
 
-
-// Start the game over from scratch
-function restartGame(){
-    document.querySelector(".game-board").classList.remove("game-over");
-    document.querySelector(".game-board").classList.remove("during-game");
-    document.querySelector(".game-board").classList.add("before-game");
-
-    document.querySelector(".winner-section").style.display = "none";
-    document.querySelector(".hacker-card").style.display = "none";
-
-    var cards = allCardElements;
-
-    document.querySelector("button").removeAttribute("disabled");
-
-    for(var i = 0; i < cards.length; i++) {
-        cards[i].style.display = "none";
-    }
-
-    playerLife = playerStartLife;
-    hackerLife = hackerStartLife;
-
-    roundFinished = true;
-    cardSelected = false;
-
-    updateScores();
-}
-
-// Updates the displayed life bar and life totals
 function updateScores(){
 
     // Update life totals for each player
@@ -336,14 +255,14 @@ function updateScores(){
     document.querySelector(".hacker-stats .life-total").innerHTML = hackerLife;
 
     // Update the player lifebar
-    var playerPercent = playerLife / playerStartLife * 100;
+    let playerPercent = playerLife / playerStartLife * 100;
     if (playerPercent < 0) {
         playerPercent = 0;
     }
     document.querySelector(".player-stats .life-left").style.height =  playerPercent + "%";
 
     // Update the hacker lifebar
-    var hackerPercent = hackerLife / hackerStartLife * 100
+    let hackerPercent = hackerLife / hackerStartLife * 100;
     if (hackerPercent < 0) {
         hackerPercent = 0;
     }
@@ -353,7 +272,7 @@ function updateScores(){
 
 // Shuffles an array
 function shuffleArray(a) {
-    var j, x, i;
+    let j, x, i;
     for (i = a.length; i; i--) {
         j = Math.floor(Math.random() * i);
         x = a[i - 1];
@@ -363,6 +282,12 @@ function shuffleArray(a) {
     return a;
 }
 
+function startGame() {
+
+    document.querySelector(".game-board").classList.remove("before-game");
+    document.querySelector(".game-board").classList.add("during-game");
+    playTurn();
+}
 
 // Plays one turn of the game
 function playTurn() {
@@ -379,8 +304,8 @@ function playTurn() {
     // Hides the "next turn" button, will show again when turn is over
     document.querySelector(".next-turn").setAttribute("disabled", "true");
 
-    for(var i = 0; i < allCardElements.length; i++) {
-        var card = allCardElements[i];
+    for(let i = 0; i < allCardElements.length; i++) {
+        let card = allCardElements[i];
         card.classList.remove("showCard");
     }
 
@@ -390,30 +315,28 @@ function playTurn() {
 }
 
 function revealCards(){
-
-
-    var j = 0;
-    var cardIndexes = shuffleArray([0, 1, 2]);
+    let j = 0;
+    let cardIndexes = shuffleArray([0, 1, 2]);
 
     // Get scenario cards
     console.log("scenarios.length == " + scenarios.length);
 
-    var randomScenarioIndex = Math.floor(Math.random() * scenarios.length);
-    var scenario = scenarios[randomScenarioIndex];
+    let randomScenarioIndex = Math.floor(Math.random() * scenarios.length);
+    let scenario = scenarios[randomScenarioIndex];
     console.log(scenario.hackerCard.description);
 
     scenarios.splice(randomScenarioIndex, 1);
 
     console.log("scenarios.length after splice == " + scenarios.length);
 
-    var hackerCard = scenario.hackerCard;
-    var hackerCardEl = document.querySelector(".hacker-area .card");
+    let hackerCard = scenario.hackerCard;
+    let hackerCardEl = document.querySelector(".hacker-area .card");
 
     // Contents of the player cards
-    var playerCards = scenario.playerCards;
+    let playerCards = scenario.playerCards;
 
-    for(var i = 0; i < allCardElements.length; i++) {
-        var card = allCardElements[i];
+    for(let i = 0; i < allCardElements.length; i++) {
+        let card = allCardElements[i];
 
         card.classList.remove("worse-card");
         card.classList.remove("better-card");

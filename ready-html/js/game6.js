@@ -2,8 +2,8 @@ const emails = [
     {
         id: "email1",
         from: "support@paypal-verify.com",
-        subject: "Urgent: Verify Your Account Information",
-        message: "Dear User, your account has been temporarily suspended. Please click the link below to verify your information.",
+        subject: "Срочно: Подвердите данные вашего аккаунта",
+        message: "Уважаемый пользователь, действие вашей учетной записи было временно приостановлено. Пожалуйста, перейдите по ссылке ниже, чтобы подтвердить свои данные.",
         link: "http://paypal-verify.com",
         attachment: null,
         isPhishing: true
@@ -11,8 +11,8 @@ const emails = [
     {
         id: "email2",
         from: "unknown@freemoney.com",
-        subject: "You have won a prize!",
-        message: "Congratulations! You've been selected to win $1000. Open the attached file to claim your prize.",
+        subject: "Вы выйграли приз!",
+        message: "Поздравляю! Вы были выбраны для получения 1000 долларов. Откройте прикрепленный файл, чтобы получить свой приз..",
         link: null,
         attachment: "PrizeClaim.doc",
         isPhishing: true
@@ -20,12 +20,49 @@ const emails = [
     {
         id: "email3",
         from: "colleague@company.com",
-        subject: "Meeting notes",
-        message: "Please find attached the notes from yesterday's meeting.",
+        subject: "Заметки о встрече",
+        message: "Пожалуйста, ознакомьтесь с прилагаемыми заметками о вчерашней встрече.",
         link: null,
         attachment: "MeetingNotes.pdf",
         isPhishing: false
+    },
+    {
+        id: "email4",
+        from: "teammember@company.com",
+        subject: "Обновление проекта",
+        message: "Прилагается последняя информация о статусе проекта.",
+        link: null,
+        attachment: "ProjectUpdate.pdf",
+        isPhishing: false
+    },
+    {
+        id: "email5",
+        from: "lucky@lotterywinners.com",
+        subject: "Забирайте свой выигрыш в Лотерею!",
+        message: "Отличные новости! Вы выиграли в лотерею! Откройте прилагаемый документ, чтобы узнать, как получить свой приз в размере 5000 долларов.",
+        link: null,
+        attachment: "LotteryClaim.doc",
+        isPhishing: true
+    },
+    {
+        id: "email6",
+        from: "hr@company.com",
+        subject: "Обновление политики",
+        message: "Пожалуйста, ознакомьтесь с прилагаемым документом, касающимся обновленной политики компании.",
+        link: null,
+        attachment: "PolicyUpdate.pdf",
+        isPhishing: false
+    },
+    {
+        id: "email7",
+        from: "admin@freeraffle.com",
+        subject: "Вы выиграли в розыгрыше!",
+        message: "Потрясающая новость! Вы были выбраны победителем нашего розыгрыша 2000 долларов. Пожалуйста, откройте прикрепленный файл, чтобы получить вознаграждение.",
+        link: null,
+        attachment: "RafflePrize.doc",
+        isPhishing: true
     }
+
 ];
 
 let score = 0;
@@ -45,9 +82,9 @@ function handlePhishing() {
     const email = emails[currentEmailIndex];
     if (email.isPhishing) {
         score += 10;
-        showResult("Correct! This was a phishing email.");
+        showResult("Верно! Это было фишинговое сообщение.");
     } else {
-        showResult("Incorrect. This was a legitimate email.");
+        showResult("Неверно. Это было безопасное сообщение.");
     }
     currentEmailIndex++;
     loadEmail();
@@ -57,9 +94,9 @@ function handlePhishing() {
 function handleOpen() {
     const email = emails[currentEmailIndex];
     if (email.isPhishing) {
-        showResult("Warning! This email contains phishing elements.");
+        showResult("Внимание! Это сообщение может быть фишинговым.");
     } else {
-        showResult("This email is safe.");
+        showResult("Это сообщение безопасное.");
     }
 }
 
@@ -67,9 +104,9 @@ function handleDelete() {
     const email = emails[currentEmailIndex];
     if (!email.isPhishing) {
         score -= 5;
-        showResult("Incorrect. This was a legitimate email.");
+        showResult("Неверно. Это было безопасное сообщение.");
     } else {
-        showResult("Phishing email deleted.");
+        showResult("Фишинговое сообщения удалено.");
     }
     currentEmailIndex++;
     loadEmail();
@@ -87,14 +124,14 @@ function loadEmail() {
         emailDiv.id = email.id;
 
         emailDiv.innerHTML = `
-            <p><strong>From:</strong> ${email.from}</p>
-            <p><strong>Subject:</strong> ${email.subject}</p>
-            <p><strong>Message:</strong> ${email.message}</p>
+            <p><strong>От кого:</strong> ${email.from}</p>
+            <p><strong>Кому:</strong> ${email.subject}</p>
+            <p><strong>Сообщение:</strong> ${email.message}</p>
             ${email.link ? `<p><a href="${email.link}">${email.link}</a></p>` : ''}
-            ${email.attachment ? `<p><strong>Attachment:</strong> ${email.attachment}</p>` : ''}
-            <button class="phishing">Mark as Phishing</button>
-            <button class="open">Open Safely</button>
-            <button class="delete">Delete</button>
+            ${email.attachment ? `<p><strong>Прложение сообщения:</strong> ${email.attachment}</p>` : ''}
+            <button class="phishing">Отметить как фишинг</button>
+            <button class="open">Отметить как безопасное</button>
+            <button class="delete">Удалить</button>
         `;
 
         mailbox.appendChild(emailDiv);
@@ -103,14 +140,13 @@ function loadEmail() {
         document.querySelector('.open').addEventListener('click', handleOpen);
         document.querySelector('.delete').addEventListener('click', handleDelete);
     } else {
-        showResult("Game Over! Your final score is: " + score);
+        showResult("Игра окончена! Ваш конечный резльутат:  " + score);
         document.getElementById('exit-button').style.display = 'block';
     }
 }
 
 function exitGame() {
-    alert("Thank you for playing! Exiting the game.");
-    // You can add any additional actions here if needed, like redirecting to another page
+    window.location.href = '../map.html';
 }
 
 window.onload = loadEmail;

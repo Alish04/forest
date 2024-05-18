@@ -121,11 +121,6 @@ app.listen(port, () => {
 	console.log(`Сервер запущен на порту ${port}`);
 });
 
-
-
-
-
-
 app.get('/profile', (req, res) => {
 	const userId = req.query.id; // Assuming user ID is passed as query parameter
 
