@@ -2,7 +2,7 @@ const express = require("express");
 const mysql = require("mysql2");
 const bodyParser = require("body-parser");
 const bcrypt = require("bcryptjs");
-const { check, validationResult } = require("express-validator");
+const {validationResult } = require("express-validator");
 
 const app = express();
 const port = 3000;
@@ -40,7 +40,7 @@ app.get("/register", (req, res) => {
 });
 
 app.post("/register", (req, res) => {
-	const { firstname, lastname, email, userPassword, confirmPass } = req.body;
+	const { firstname, lastname, email, userPassword, confirmPass , age} = req.body;
 
 	// Валидация данных
 	const errors = validationResult(req);
@@ -73,7 +73,7 @@ app.post("/register", (req, res) => {
 		const hashedPassword = await bcrypt.hash(userPassword, 10);
 
 		// Создание нового пользователя
-		db.query("INSERT INTO users (firstName, lastName, email, userPassword) VALUES (?, ?, ?, ?)", [firstname, lastname, email, hashedPassword], (err) => {
+		db.query("INSERT INTO users (firstName, lastName, email, userPassword, age) VALUES (?, ?, ?, ?, ?)", [firstname, lastname, email, hashedPassword, age], (err) => {
 			if (err) {
 				console.error("Ошибка при вставке данных в базу данных:", err);
 				return res.status(500).send("Ошибка регистрации");
@@ -88,7 +88,7 @@ app.get("/signin", (req, res) => {
 });
 
 app.post("/signin", (req, res) => {
-	const { email, userPassword } = req.body;
+	const { email} = req.body;
 
 	// Поиск пользователя по email
 	db.query("SELECT * FROM users WHERE email = ?", [email], async (err, results) => {
@@ -120,3 +120,26 @@ app.post("/signin", (req, res) => {
 app.listen(port, () => {
 	console.log(`Сервер запущен на порту ${port}`);
 });
+
+
+
+
+
+
+app.get('/profile', (req, res) => {
+	const userId = req.query.id; // Assuming user ID is passed as query parameter
+
+	db.query("SELECT firstName, lastName, email, age, completedLevels FROM users WHERE userId = ?", [userId], (err, results) => {
+		if (err) {
+			console.error("Error fetching user data:", err);
+			return res.status(500).send("Internal Server Error");
+		}
+
+		if (results.length === 0) {
+			return res.status(404).send("User not found");
+		}
+
+		res.json(results[0]);
+	});
+});
+
