@@ -13,8 +13,8 @@
 
     <div class="title-h1">
         <h1>
-            <strong>Anonmyous Attack Card</strong> <br />
-            Choose the best card to prevent becoming a victim.
+            <strong>Анонимная атака</strong> <br />
+            Выберите верный вариант действии, чтобы не стать жертвой.
         </h1>
     </div>
     <div class="hacker-area">
@@ -26,7 +26,7 @@
             <div class="thumbnail">
                 <img src="img/4.png" alt="hacker" />
             </div>
-            <div class="name">Anonymous</div>
+            <div class="name">Аноним</div>
         </div>
 
         <div class="card hacker-card hacker-color">
@@ -45,7 +45,7 @@
             <div class="thumbnail">
                 <img src="img/3.png" alt="hacker" />
             </div>
-            <div class="name">You</div>
+            <div class="name">Вы</div>
         </div>
 
         <div class="card player-card player-color">
@@ -63,15 +63,15 @@
             <div class="power"></div>
         </div>
 
-        <button class="start-game" onClick="startGame()">Play the Game!</button>
-        <button class="next-turn" onClick="playTurn()">Next!</button>
+        <button class="start-game" onClick="startGame()">Начать игру!</button>
+        <button class="next-turn" onClick="playTurn()">Следующий!</button>
     </div>
 </div>
 
 <div class="winner-section">
     <div>
-        <span class="winner-message">You got traped!</span>
-        <button class="restart" onClick="location.reload()">Play Again</button>
+        <span class="winner-message">Вы попали в ловушку и стали жертвой хакера!</span>
+        <button id="exit-button" style="display: none;" onclick="exitGame()">Выход</button>
     </div>
 </div>
 
