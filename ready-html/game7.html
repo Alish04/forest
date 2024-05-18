@@ -9,73 +9,78 @@
 </head>
 
 <body>
-<div class="game-board">
 
-    <div class="title-h1">
-        <h1>
-            <strong>Анонимная атака</strong> <br />
-            Выберите верный вариант действии, чтобы не стать жертвой.
-        </h1>
-    </div>
-    <div class="hacker-area">
-        <div class="stats hacker-stats">
-            <div class="life-bar">
-                <div class="life-left hacker-color"></div>
-            </div>
-            <div class="life-total"></div>
-            <div class="thumbnail">
-                <img src="img/4.png" alt="hacker" />
-            </div>
-            <div class="name">Аноним</div>
-        </div>
-
-        <div class="card hacker-card hacker-color">
-            <div class="text"></div>
-            <div class="power"></div>
-        </div>
+    <div class="topnav">
+        <a class="active" href="map.html">Главная</a>
     </div>
 
-    <div class="player-area">
-        <div class="stats player-stats">
-            <div class="life-bar">
-                <div class="life-left player-color"></div>
+    <div class="game-board">
+
+        <div class="title-h1">
+            <h1>
+                <strong>Анонимная атака</strong> <br />
+                Выберите верный вариант действии, чтобы не стать жертвой.
+            </h1>
+        </div>
+        <div class="hacker-area">
+            <div class="stats hacker-stats">
+                <div class="life-bar">
+                    <div class="life-left hacker-color"></div>
+                </div>
+                <div class="life-total"></div>
+                <div class="thumbnail">
+                    <img src="img/4.png" alt="hacker" />
+                </div>
+                <div class="name">Аноним</div>
             </div>
-            <div class="life-total"></div>
-            <!-- Change the name and emoji here -->
-            <div class="thumbnail">
-                <img src="img/3.png" alt="hacker" />
+
+            <div class="card hacker-card hacker-color">
+                <div class="text"></div>
+                <div class="power"></div>
             </div>
-            <div class="name">Вы</div>
         </div>
 
-        <div class="card player-card player-color">
-            <div class="text"></div>
-            <div class="power"></div>
-        </div>
+        <div class="player-area">
+            <div class="stats player-stats">
+                <div class="life-bar">
+                    <div class="life-left player-color"></div>
+                </div>
+                <div class="life-total"></div>
+                <!-- Change the name and emoji here -->
+                <div class="thumbnail">
+                    <img src="img/3.png" alt="hacker" />
+                </div>
+                <div class="name">Вы</div>
+            </div>
 
-        <div class="card player-card player-color">
-            <div class="text"></div>
-            <div class="power"></div>
-        </div>
+            <div class="card player-card player-color">
+                <div class="text"></div>
+                <div class="power"></div>
+            </div>
 
-        <div class="card player-card player-color">
-            <div class="text"></div>
-            <div class="power"></div>
-        </div>
+            <div class="card player-card player-color">
+                <div class="text"></div>
+                <div class="power"></div>
+            </div>
 
-        <button class="start-game" onClick="startGame()">Начать игру!</button>
-        <button class="next-turn" onClick="playTurn()">Следующий!</button>
+            <div class="card player-card player-color">
+                <div class="text"></div>
+                <div class="power"></div>
+            </div>
+
+            <button class="start-game" onClick="startGame()">Начать игру!</button>
+            <button class="next-turn" onClick="playTurn()">Следующий!</button>
+        </div>
     </div>
-</div>
 
-<div class="winner-section">
-    <div>
-        <span class="winner-message">Вы попали в ловушку и стали жертвой хакера!</span>
-        <button id="exit-button" style="display: none;" onclick="exitGame()">Выход</button>
+    <div class="winner-section">
+        <div>
+            <span class="winner-message">Вы попали в ловушку и стали жертвой хакера!</span>
+            <button id="exit-button" style="display: none;" onclick="exitGame()">Выход</button>
+        </div>
     </div>
-</div>
 
-<script src="js/game7.js" type="text/javascript"></script>
+    <script src="js/game7.js" type="text/javascript"></script>
 
 </body>
 </html>

@@ -1,3 +1,33 @@
+.topnav {
+    background-color: rgba(0, 0, 0, 0.35);
+    overflow: hidden;
+}
+
+.topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 5px 5px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.topnav a:hover {
+    background: rgba(35, 58, 58, 0.58);
+    color: rgba(242, 242, 242, 0.65);
+    box-shadow: 0 0 30px 5px rgba(35, 58, 58, 0.58);
+}
+
+.topnav a.active {
+    background-color: rgba(47, 79, 79, 0.41);
+    color: white;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+
 .player-color {
     background-color: #ffffff;
 }

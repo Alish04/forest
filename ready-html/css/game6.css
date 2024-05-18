@@ -1,26 +1,67 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
+body {
+    background-image: url('/img/layer-base.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+
+.topnav {
+    background-color: rgba(0, 0, 0, 0.35);
+    overflow: hidden;
+}
+
+.topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.topnav a:hover {
+    background: rgba(35, 58, 58, 0.58);
+    color: rgba(242, 242, 242, 0.65);
+    box-shadow: 0 0 30px 5px rgba(35, 58, 58, 0.58);
+}
+
+.topnav a.active {
+    background-color: rgba(47, 79, 79, 0.41);
+    color: white;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+
+
 
 .container {
-    text-align: center;
-    background: white;
-    padding: 20px;
+    background: rgba(0,0,0,.8);
+    box-shadow: 0 15px 25px rgba(47, 79, 79);
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    width: 40%;
+    margin: 100px auto;
 }
 
+
 .email {
-    border: 1px solid #ddd;
+    border: 1px solid #233a3a;
     padding: 10px;
     margin: 10px 0;
     border-radius: 5px;
+    color: #e7e7e0;
 }
 
 button {
@@ -33,32 +74,34 @@ button {
 }
 
 .phishing {
-    background-color: #f44336;
+    background-color: rgba(244, 67, 54, 0.67);
     color: white;
 }
 
 .open {
-    background-color: #4CAF50;
+    background-color: rgba(76, 175, 80, 0.45);
     color: white;
 }
 
 .delete {
-    background-color: #ff9800;
+    background-color: rgba(255, 152, 0, 0.52);
     color: white;
 }
 
 #result {
     margin-top: 20px;
     font-size: 18px;
+    color: #e7e7e0;
 }
 
 #score-container {
     margin-top: 20px;
     font-size: 18px;
+    color: #e7e7e0;
 }
 
 #exit-button {
-    background-color: #2196F3;
+    background-color: #233a3a;
     color: white;
     margin-top: 20px;
     padding: 10px 20px;
@@ -66,4 +109,8 @@ button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+}
+
+h1 {
+    color: #e7e7e0;
 }

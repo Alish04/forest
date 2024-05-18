@@ -7,17 +7,22 @@
     <link rel="stylesheet" href="css/game6.css">
 </head>
 <body>
-<div class="container">
-    <h1>Фишинговые сообщения</h1>
-    <div id="mailbox">
-        <!-- Email will be loaded here by JavaScript -->
+
+    <div class="topnav">
+        <a class="active" href="map.html">Главная</a>
     </div>
-    <div id="result"></div>
-    <div id="score-container">
-        <p>Score: <span id="score">0</span></p>
+
+    <div class="container">
+        <h1>Фишинговые сообщения</h1>
+        <div id="mailbox">
+            <!-- Email will be loaded here by JavaScript -->
+        </div>
+        <div id="result"></div>
+        <div id="score-container">
+            <p>Score: <span id="score">0</span></p>
+        </div>
+        <button id="exit-button" style="display: none;" onclick="exitGame()">Выход</button>
     </div>
-    <button id="exit-button" style="display: none;" onclick="exitGame()">Выход</button>
-</div>
-<script src="js/game6.js"></script>
+    <script src="js/game6.js"></script>
 </body>
 </html>
