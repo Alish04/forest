@@ -10,7 +10,6 @@ body {
     overflow: hidden;
 }
 
-
 .topnav {
     background-color: rgba(0, 0, 0, 0.35);
     overflow: hidden;
@@ -36,7 +35,6 @@ body {
     color: white;
 }
 
-
 .container {
     display: flex;
     margin: 200px auto;
@@ -55,7 +53,6 @@ body {
     border-radius: 5px;
     border: 1px solid #ddd;
 }
-
 
 .input-section{
     position: absolute;
@@ -88,7 +85,6 @@ p {
     margin-bottom: 5px;
     letter-spacing: 0.2px;
     word-spacing: 2.6px;
-
 }
 
 .requirements li {
@@ -99,31 +95,12 @@ p {
     color: rgba(0, 255, 214, 0.55);
 }
 
-
 #completeGameBtn {
-    position: fixed;
-    right: 105px;
-    bottom: 20px;
     padding: 10px 20px;
     cursor: pointer;
     border: none;
     border-radius: 5px;
     background-color: rgba(0, 128, 128, 0.49);
     color: #e7e7e0;
-}
-
-#exitButton {
     position: fixed;
-    right: 20px;
-    bottom: 20px;
-    padding: 10px 20px;
-    cursor: pointer;
-    border: none;
-    border-radius: 5px;
-    background-color: rgba(0, 128, 128, 0.49);
-    color: #e7e7e0;
-}
-
-#exitButton:hover {
-    background-color: rgba(1, 94, 94, 0.55);
 }

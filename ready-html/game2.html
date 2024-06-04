@@ -10,33 +10,31 @@
 
     <link rel="stylesheet" href="css/game2.css">
 
-
 </head>
 <body>
 
-    <div class="topnav">
-        <a class="active" href="map.html">Главная</a>
-    </div>
+<div class="topnav">
+    <a class="active" href="map.html">Главная</a>
+</div>
 
-    <div class="container">
-        <div class="input-section">
-            <input type="text" id="passwordInput" placeholder="Введите ваш пароль">
-        </div>
-        <div class="requirements">
-            <h2>Требования к паролю:</h2>
-            <p>Вы не сможете нажать на кнопку "Закончить", пока не придумаете надежный пароль</p>
-            <ul>
-                <li id="length">Не менее 9 символов</li>
-                <li id="uppercase">Хотя бы одна заглавная буква</li>
-                <li id="number">Хотя бы одна цифра</li>
-                <li id="special">Хотя бы один спецсимвол</li>
-                <li id="notCommon">Не "qwerty" или "1234"</li>
-            </ul>
-        </div>
-        <button id="exitButton" onclick="window.location.href='map.html'">Выход</button>
-        <button id="completeGameBtn">Закончить игру</button>
+<div class="container">
+    <div class="input-section">
+        <input type="text" id="passwordInput" placeholder="Введите ваш пароль">
     </div>
-    <script src="js/game2.js"></script>
+    <div class="requirements">
+        <h2>Требования к паролю:</h2>
+        <p>Вы не сможете нажать на кнопку "Закончить", пока не придумаете надежный пароль</p>
+        <ul>
+            <li id="length">Не менее 9 символов</li>
+            <li id="uppercase">Хотя бы одна заглавная буква</li>
+            <li id="number">Хотя бы одна цифра</li>
+            <li id="special">Хотя бы один спецсимвол</li>
+            <li id="notCommon">Не "qwerty" или "1234"</li>
+        </ul>
+    </div>
+    <button id="completeGameBtn" style="right: 20px; bottom: 20px;">Закончить игру</button>
+</div>
+<script src="js/game2.js"></script>
 
 </body>
 </html>

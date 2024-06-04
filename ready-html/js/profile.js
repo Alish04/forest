@@ -1,5 +1,5 @@
 window.onload = function() {
-    fetch('/profile?id=6' +
+    fetch('/profile?id=9' +
         '')  // Assuming user ID 1 for demonstration
         .then(response => {
             if (!response.ok) {

@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
     const passwordInput = document.getElementById('passwordInput');
-    const finishButton = document.getElementById('finishButton');
+    const completeGameBtn = document.getElementById('completeGameBtn');
 
     passwordInput.addEventListener('input', handlePasswordInput);
-    finishButton.addEventListener('mouseenter', maybeMoveButton);
+    completeGameBtn.addEventListener('mouseover', maybeMoveButton);
 
     function handlePasswordInput() {
         const password = passwordInput.value;
@@ -20,29 +20,39 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('notCommon').classList.toggle('fulfilled', notCommonFulfilled);
 
         const allFulfilled = lengthFulfilled && uppercaseFulfilled && numberFulfilled && specialFulfilled && notCommonFulfilled;
-        finishButton.disabled = !allFulfilled;
+        completeGameBtn.disabled = !allFulfilled;
+
     }
 
-    function maybeMoveButton() {
-        if (finishButton.disabled) {
-            moveButton();
+    function maybeMoveButton(event) {
+        if (completeGameBtn.disabled) {
+            moveButton(event);
         }
     }
 
-    function moveButton() {
-        const maxX = document.body.clientWidth - finishButton.offsetWidth;
-        const maxY = window.innerHeight - finishButton.offsetHeight;
-        const newX = Math.random() * maxX;
-        const newY = Math.random() * maxY;
+    function moveButton(event) {
+        const moveDistance = 200; // Increased move distance
+        const currentLeft = completeGameBtn.offsetLeft;
+        const currentTop = completeGameBtn.offsetTop;
+        let newX = currentLeft + (Math.random() * moveDistance - moveDistance / 2);
+        let newY = currentTop + (Math.random() * moveDistance - moveDistance / 2);
 
-        finishButton.style.position = 'fixed';
-        finishButton.style.left = `${newX}px`;
-        finishButton.style.top = `${newY}px`;
+        // Ensure the button stays within the visible area
+        const maxX = window.innerWidth - completeGameBtn.offsetWidth;
+        const maxY = window.innerHeight - completeGameBtn.offsetHeight;
+
+        if (newX < 0) newX = 0;
+        if (newX > maxX) newX = maxX;
+        if (newY < 0) newY = 0;
+        if (newY > maxY) newY = maxY;
+
+        completeGameBtn.style.position = 'fixed';
+        completeGameBtn.style.left = `${newX}px`;
+        completeGameBtn.style.top = `${newY}px`;
     }
 
-    const exitButton = document.getElementById('exitButton');
-    exitButton.addEventListener('click', () => {
-        window.location.href='map.html'
+    document.getElementById('exitButton').addEventListener('click', () => {
+        window.location.href = 'map.html';
     });
 });
 
