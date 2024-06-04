@@ -51,7 +51,7 @@ let scenarios = [
             },
             {
                 description: "Я позвоню в полицию.",
-                power: 4,
+                power: 5,
             },
             {
                 description: "Я ничего не буду делать.",
@@ -245,7 +245,7 @@ function gameOver(winner) {
 }
 
 function exitGame() {
-    window.location.href = '../map.html';
+    window.location.href = 'map.html';
 }
 
 function updateScores(){
