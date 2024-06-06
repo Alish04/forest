@@ -1,5 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Событие 'DOMContentLoaded' запускается, когда весь HTML был полностью загружен и разобран, не дожидаясь окончания загрузки стилей, изображений и подфреймов
     const questions = [
+        // Массив вопросов для викторины, каждый вопрос представлен объектом с полями 'question', 'answers' и 'correct'
         { question: "Что из перечисленного НЕ является основным принципом информационной безопасности?", answers: ["Конфиденциальность", "Целостность", "Доступность", "Производительность"], correct: 3 },
         { question: "Что такое аутентификация?", answers: ["Процесс определения того, кто вы есть", "Процесс определения того, что вы можете делать", "Процесс шифрования информации", "Процесс резервного копирования данных"], correct: 0 },
         { question: "Что такое авторизация?", answers: ["Процесс определения того, кто вы есть", "Процесс определения того, что вы можете делать", "Процесс шифрования информации", "Процесс резервного копирования данных"], correct: 1 },
@@ -13,52 +15,79 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
 
     let currentQuestionIndex = 0;
+    // Индекс текущего вопроса, изначально установлен на 0
     let score = 0;
+    // Текущий счет, изначально равен 0
 
     function showQuestion() {
+        // Функция для отображения текущего вопроса
         if (currentQuestionIndex >= questions.length) {
+            // Проверка, завершены ли все вопросы
             document.getElementById('quiz-container').style.display = 'none';
+            // Скрытие контейнера с вопросами
             const resultContainer = document.getElementById('result');
             resultContainer.style.display = 'block';
+            // Показ контейнера с результатами
             resultContainer.innerHTML = `<div id="resultText">ВАШ РЕЗУЛЬТАТ: ${score} из ${questions.length}</div>
             <button id="retry" onclick="window.location.reload()">Повторить</button>
             <button id="exit" onClick="exitQuiz()">Выход</button>
             `;
-            // Показываем кнопки, которые были скрыты
+            // Отображение результатов и кнопок для повторного прохождения викторины и выхода
             return;
         }
 
         const question = questions[currentQuestionIndex];
+        // Получение текущего вопроса
         document.getElementById('question').textContent = question.question;
+        // Установка текста текущего вопроса
         const answersUl = document.getElementById('answers');
         answersUl.innerHTML = '';
+        // Очистка предыдущих ответов
         question.answers.forEach((answer, index) => {
+            // Перебор ответов текущего вопроса
             const li = document.createElement('li');
+            // Создание нового элемента списка для ответа
             li.textContent = answer;
+            // Установка текста ответа
             li.addEventListener('click', () => selectAnswer(index));
+            // Добавление обработчика события на клик по ответу
             answersUl.appendChild(li);
+            // Добавление элемента списка в контейнер ответов
         });
     }
 
     document.getElementById('retry').addEventListener('click', () => {
+        // Обработчик события для кнопки "Повторить"
         currentQuestionIndex = 0;
+        // Сброс индекса текущего вопроса на 0
         score = 0;
+        // Сброс счета на 0
         document.getElementById('result');
         document.getElementById('quiz-container');
         showQuestion();
+        // Отображение первого вопроса
     });
 
     showQuestion();
+    // Отображение первого вопроса при загрузке страницы
 
     function selectAnswer(index) {
+        // Функция для обработки выбранного ответа
         if (index === questions[currentQuestionIndex].correct) {
+            // Проверка правильности выбранного ответа
             score++;
+            // Увеличение счета, если ответ правильный
         }
         currentQuestionIndex++;
+        // Увеличение индекса текущего вопроса
         showQuestion();
+        // Отображение следующего вопроса
     }
 
 });
+
 window.exitQuiz = function() {
+    // Функция для выхода из викторины
     window.location.href = '../map.html';
+    // Перенаправление на страницу карты
 }

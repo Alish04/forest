@@ -1,34 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+  <!-- Устанавливает тип документа как HTML5 и язык страницы как английский -->
   <meta charset="UTF-8">
+  <!-- Задает кодировку страницы UTF-8 -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- Обеспечивает совместимость с браузером Internet Explorer -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Настраивает страницу для адаптивного дизайна на мобильных устройствах -->
 
   <title>Log in</title>
+  <!-- Устанавливает заголовок страницы как "Log in" -->
 
   <link rel="stylesheet" href="css/signin.css">
+  <!-- Подключает внешний CSS файл для стилизации страницы входа -->
   <link rel="script" href="/app.js">
+  <!-- Подключает внешний JavaScript файл (правильный атрибут для скриптов - "src", не "href") -->
 
 </head>
 <body>
-  <div class="login-box">
-    <p>Вход</p>
-    <form action="/signin" method="post">
-      <div class="user-box">
-        <input type="email" id="email" name="email" required>
-        <label for="email">Логин</label>
-      </div>
-      <div class="user-box">
-        <input type="password" id="userPassword" name="userPassword" required>
-        <label for="userPassword" >Пароль</label>
-      </div>
-      <a href="map.html">
-        <button>Вход</button>
-      </a>
-    </form>
-    <p>Если у вас нет аккаунта, то <a href="register.html" class="a2">создайте его!</a></p>
-  </div>
+<!-- Начало тела документа -->
+<div class="login-box">
+  <!-- Контейнер для формы входа -->
+  <p>Вход</p>
+  <!-- Заголовок формы входа -->
+  <form action="/signin" method="post">
+    <!-- Форма с методом POST, отправляемая на URL "/signin" -->
+    <div class="user-box">
+      <!-- Контейнер для элемента ввода -->
+      <input type="email" id="email" name="email" required>
+      <!-- Поле ввода для email, обязательное для заполнения -->
+      <label for="email">Логин</label>
+      <!-- Метка для поля ввода email -->
+    </div>
+    <div class="user-box">
+      <!-- Контейнер для элемента ввода -->
+      <input type="password" id="userPassword" name="userPassword" required>
+      <!-- Поле ввода для пароля, обязательное для заполнения -->
+      <label for="userPassword">Пароль</label>
+      <!-- Метка для поля ввода пароля -->
+    </div>
+    <a href="map.html">
+      <!-- Ссылка на карту -->
+      <button>Вход</button>
+      <!-- Кнопка для входа (неправильно обернута в ссылку) -->
+    </a>
+  </form>
+  <p>Если у вас нет аккаунта, то <a href="register.html" class="a2">создайте его!</a></p>
+  <!-- Ссылка на страницу регистрации для пользователей, у которых нет аккаунта -->
+</div>
 </body>
 </html>
+<!-- Конец документа -->

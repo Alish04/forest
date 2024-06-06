@@ -1,54 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+    <!-- Устанавливает тип документа как HTML5 -->
     <meta charset="UTF-8">
+    <!-- Задает кодировку страницы UTF-8 -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Обеспечивает совместимость с браузером Internet Explorer -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Настраивает страницу для адаптивного дизайна на мобильных устройствах -->
 
     <title>Register</title>
+    <!-- Устанавливает заголовок страницы как "Register" -->
 
     <link rel="stylesheet" href="css/register.css">
+    <!-- Подключает внешний CSS файл для стилизации страницы регистрации -->
     <link rel="script" href="/app.js">
+    <!-- Подключает внешний JavaScript файл (правильный атрибут для скриптов - "src", не "href") -->
 
 </head>
-<body >
-    <div class="login-box">
-        <form id="registrationForm" action="/register" method="post">
-            <p class="title">Регистрация</p>
-            <div class="flex">
-                <div class="user-box">
-                    <input type="text" placeholder="" required="" id="firstname" name="firstname" class="input">
-                    <label>Имя</label>
-                </div>
-                <div class="user-box">
-                    <input type="text" placeholder="" required="" id="lastname" name="lastname">
-                    <label>Фамилия</label>
-                </div>
-            </div>
-            <div class="user-box">
-                <input class="input" type="email" placeholder="" required="" id="email" name="email">
-                <label>Email</label>
-            </div>
-            <div class="user-box">
-                <input class="input" type="password" placeholder="" required="" id="userPassword" name="userPassword">
-                <label>Пароль</label>
-            </div>
-            <div class="user-box">
-                <input class="input" type="password" placeholder="" required="" id="confirmPass" name="confirmPass">
-                <label>Повторите пароль</label>
-            </div>
+<body>
+<!-- Начало тела документа -->
+<div class="login-box">
+    <!-- Контейнер для формы регистрации -->
+    <form id="registrationForm" action="/register" method="post">
+        <!-- Форма с методом POST, отправляемая на адрес "/register" -->
+        <p class="title">Регистрация</p>
+        <!-- Заголовок формы -->
 
+        <div class="flex">
+            <!-- Контейнер для группы элементов формы, стилизованный с помощью CSS Flexbox -->
             <div class="user-box">
-                <input class="input" type="number" placeholder="" required="" id="age" name="age">
-                <label>Возраст</label>
+                <input type="text" placeholder="" required="" id="firstname" name="firstname" class="input">
+                <!-- Поле ввода для имени, обязательное для заполнения -->
+                <label>Имя</label>
+                <!-- Метка для поля ввода имени -->
             </div>
+            <div class="user-box">
+                <input type="text" placeholder="" required="" id="lastname" name="lastname">
+                <!-- Поле ввода для фамилии, обязательное для заполнения -->
+                <label>Фамилия</label>
+                <!-- Метка для поля ввода фамилии -->
+            </div>
+        </div>
 
-            <button type="submit">Создать</button>
-        </form>
-        <p>Если у вас уже имеется аккаунт? <a href="login.html" class="a2">Вход</a></p>
-    </div>
+        <div class="user-box">
+            <input class="input" type="email" placeholder="" required="" id="email" name="email">
+            <!-- Поле ввода для email, обязательное для заполнения -->
+            <label>Email</label>
+            <!-- Метка для поля ввода email -->
+        </div>
+        <div class="user-box">
+            <input class="input" type="password" placeholder="" required="" id="userPassword" name="userPassword">
+            <!-- Поле ввода для пароля, обязательное для заполнения -->
+            <label>Пароль</label>
+            <!-- Метка для поля ввода пароля -->
+        </div>
+        <div class="user-box">
+            <input class="input" type="password" placeholder="" required="" id="confirmPass" name="confirmPass">
+            <!-- Поле ввода для подтверждения пароля, обязательное для заполнения -->
+            <label>Повторите пароль</label>
+            <!-- Метка для поля ввода подтверждения пароля -->
+        </div>
+
+        <div class="user-box">
+            <input class="input" type="number" placeholder="" required="" id="age" name="age">
+            <!-- Поле ввода для возраста, обязательное для заполнения -->
+            <label>Возраст</label>
+            <!-- Метка для поля ввода возраста -->
+        </div>
+
+        <button type="submit">Создать</button>
+        <!-- Кнопка для отправки формы -->
+    </form>
+    <p>Если у вас уже имеется аккаунт? <a href="login.html" class="a2">Вход</a></p>
+    <!-- Ссылка на страницу входа для пользователей, у которых уже есть аккаунт -->
+</div>
 </body>
 </html>
-
-
+<!-- Конец документа -->

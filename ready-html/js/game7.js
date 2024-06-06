@@ -11,7 +11,7 @@ let scenarios = [
             },
             {
                 description: "Я никогда не отвечаю человеку, которого не знаю.",
-                power: 4,
+                power: 5,
             },
             {
                 description: "Сначала я спрошу его/ее, а потом отвечу.",
@@ -27,7 +27,7 @@ let scenarios = [
         playerCards: [
             {
                 description: "Я никогда не расскажу ему/ей о своем друге.",
-                power: 3,
+                power: 5,
             },
             {
                 description: "Я расскажу ему/ей о своем друге.",
@@ -35,7 +35,7 @@ let scenarios = [
             },
             {
                 description: "Сначала я спрошу у него/нее о моем друге.",
-                power: 4,
+                power: 2,
             }
         ]
     },
@@ -51,11 +51,11 @@ let scenarios = [
             },
             {
                 description: "Я позвоню в полицию.",
-                power: 5,
+                power: 6,
             },
             {
                 description: "Я ничего не буду делать.",
-                power: 2,
+                power: 5,
             }
         ]
     },
@@ -71,11 +71,11 @@ let scenarios = [
             },
             {
                 description: "Я ничего ему не скажу.",
-                power: 2,
+                power: 5,
             },
             {
                 description: "Я расскажу ему об этом лично, когда встречусь с ним.",
-                power: 4,
+                power: 3,
             }
         ]
     },
@@ -87,11 +87,11 @@ let scenarios = [
         playerCards: [
             {
                 description: "Я никогда никому этого не отправлю.",
-                power: 3,
+                power: 4,
             },
             {
                 description: "Я расскажу об этом своим родителям.",
-                power: 4,
+                power: 5,
             },
             {
                 description: "Я сохраню это в секрете.",
@@ -108,7 +108,7 @@ let scenarios = [
         playerCards: [
             {
                 description: "Я буду бороться с ним/ней.",
-                power: 2,
+                power: 5,
             },
             {
                 description: "Я сделаю то, чего он от меня хочет",
@@ -116,7 +116,7 @@ let scenarios = [
             },
             {
                 description: "Я подам в суд на кибер-травлю.",
-                power: 5,
+                power: 6,
             }
         ]
     }
@@ -124,63 +124,71 @@ let scenarios = [
 
 let playerLife = 5;
 let hackerLife = 5;
-let hackerWinnerMessage = "Game over: You got hacked!";
-let playerWinnerMessage = "You defeated the hacker!";
+// Устанавливаем начальное количество жизней игрока и хакера
+let hackerWinnerMessage = "Игра окончилась: вас взломали!";
+let playerWinnerMessage = "Вы победили хакера!";
+// Сообщения о победе хакера и игрока
 let playerStartLife = parseInt(playerLife);
 let hackerStartLife = parseInt(hackerLife);
+// Преобразование начального количества жизней в целые числа
 let roundFinished = false;
 let cardSelected = false;
+// Переменные для отслеживания завершения раунда и выбора карты
 
 updateScores();
+// Обновление счетов жизней
 
 document.querySelector(".game-board").classList.add("before-game");
+// Добавление класса 'before-game' к игровому полю
 
 let allCardElements = document.querySelectorAll(".card");
+// Получение всех элементов карт
 
-// Adds click handler to all player card elements
+// Добавляем обработчик событий на все карты игрока
 for(let i = 0; i < allCardElements.length; i++) {
     let card = allCardElements[i];
     if(card.classList.contains("player-card")) {
-        card.addEventListener("click",function(e){
+        card.addEventListener("click", function(e){
             cardClicked(this);
         });
     }
 }
 
-
-// When a card is clicked
+// Когда карта выбрана
 function cardClicked(cardEl) {
-
     if(cardSelected) { return; }
     cardSelected = true;
+    // Если карта уже выбрана, выходим из функции
 
     cardEl.classList.add("played-card");
+    // Добавление класса 'played-card' к выбранной карте
 
     document.querySelector(".game-board").classList.add("card-selected");
+    // Добавление класса 'card-selected' к игровому полю
 
-    // Wait 500ms to reveal the hacker power
+    // Ожидаем 500 мс перед раскрытием силы хакера
     setTimeout(function(){
         revealHackerPower();
-    },500)
+    }, 500);
 
-    // Wait 750ms to reveal the player power
+    // Ожидаем 750 мс перед раскрытием силы игрока
     setTimeout(function(){
         revealPlayerPower();
-    },800)
+    }, 800);
 
-    // Wait 1250ms to compare the card scoers
+    // Ожидаем 1250 мс перед сравнением силы карт
     setTimeout(function(){
         compareCards();
     }, 1400);
 }
 
-// Shows the power level on the player card
+// Показывает уровень силы на карте игрока
 function revealPlayerPower(){
     let playerCard = document.querySelector(".played-card");
     playerCard.classList.add("reveal-power");
 }
 
-// Shows the power level on the hacker card
+// Показывает уровень силы на карте хакера
 function revealHackerPower(){
     let hackerCard = document.querySelector(".hacker-card");
     hackerCard.classList.add("reveal-power");
@@ -199,13 +207,13 @@ function compareCards(){
     let powerDifference = playerPower - hackerPower;
 
     if (powerDifference < 0) {
-        // Player Loses
+        // Игрок проиграл
         playerLife = playerLife + powerDifference;
         hackerCard.classList.add("better-card");
         playerCard.classList.add("worse-card");
         document.querySelector(".player-stats .thumbnail").classList.add("ouch");
     } else if (powerDifference > 0) {
-        // Player Wins
+        // Игрок выиграл
         hackerLife = hackerLife - powerDifference;
         playerCard.classList.add("better-card");
         hackerCard.classList.add("worse-card");
@@ -220,7 +228,7 @@ function compareCards(){
     if(playerLife <= 0) {
         gameOver("Hacker");
     } else if (hackerLife <= 0){
-        gameOver("Player")
+        gameOver("Player");
     }
 
     roundFinished = true;
@@ -228,7 +236,7 @@ function compareCards(){
     document.querySelector("button.next-turn").removeAttribute("disabled");
 }
 
-// Shows the winner message
+// Показывает сообщение о победителе
 function gameOver(winner) {
     document.querySelector(".game-board").classList.add("game-over");
     document.querySelector(".winner-section").style.display = "flex";
@@ -248,20 +256,19 @@ function exitGame() {
     window.location.href = 'map.html';
 }
 
-function updateScores(){
-
-    // Update life totals for each player
+function updateScores() {
+    // Обновление количества жизней для каждого игрока
     document.querySelector(".player-stats .life-total").innerHTML = playerLife;
     document.querySelector(".hacker-stats .life-total").innerHTML = hackerLife;
 
-    // Update the player lifebar
+    // Обновление шкалы жизней игрока
     let playerPercent = playerLife / playerStartLife * 100;
     if (playerPercent < 0) {
         playerPercent = 0;
     }
     document.querySelector(".player-stats .life-left").style.height =  playerPercent + "%";
 
-    // Update the hacker lifebar
+    // Обновление шкалы жизней хакера
     let hackerPercent = hackerLife / hackerStartLife * 100;
     if (hackerPercent < 0) {
         hackerPercent = 0;
@@ -269,8 +276,7 @@ function updateScores(){
     document.querySelector(".hacker-stats .life-left").style.height =  hackerPercent + "%";
 }
 
-
-// Shuffles an array
+// Перемешивает массив
 function shuffleArray(a) {
     let j, x, i;
     for (i = a.length; i; i--) {
@@ -283,25 +289,23 @@ function shuffleArray(a) {
 }
 
 function startGame() {
-
     document.querySelector(".game-board").classList.remove("before-game");
     document.querySelector(".game-board").classList.add("during-game");
     playTurn();
 }
 
-// Plays one turn of the game
+// Проигрывает один ход игры
 function playTurn() {
-
     roundFinished = true;
     cardSelected = false;
 
     document.querySelector(".game-board").classList.remove("card-selected");
 
-    // Remove "ouch" class from player and hacker thumbnails
+    // Удаление класса 'ouch' с миниатюр игрока и хакера
     document.querySelector(".hacker-stats .thumbnail").classList.remove("ouch");
     document.querySelector(".player-stats .thumbnail").classList.remove("ouch");
 
-    // Hides the "next turn" button, will show again when turn is over
+    // Скрывает кнопку 'следующий ход', покажет снова после завершения хода
     document.querySelector(".next-turn").setAttribute("disabled", "true");
 
     for(let i = 0; i < allCardElements.length; i++) {
@@ -318,7 +322,7 @@ function revealCards(){
     let j = 0;
     let cardIndexes = shuffleArray([0, 1, 2]);
 
-    // Get scenario cards
+    // Получаем карты сценария
     console.log("scenarios.length == " + scenarios.length);
 
     let randomScenarioIndex = Math.floor(Math.random() * scenarios.length);
@@ -332,7 +336,7 @@ function revealCards(){
     let hackerCard = scenario.hackerCard;
     let hackerCardEl = document.querySelector(".hacker-area .card");
 
-    // Contents of the player cards
+    // Содержимое карт игрока
     let playerCards = scenario.playerCards;
 
     for(let i = 0; i < allCardElements.length; i++) {
@@ -345,14 +349,14 @@ function revealCards(){
         card.classList.remove("prepared");
         card.classList.remove("reveal-power");
 
-        // Display the payer card details
+        // Отображаем детали карты игрока
         if(card.classList.contains("player-card")) {
             card.querySelector(".text").innerHTML = playerCards[cardIndexes[j]].description;
             card.querySelector(".power").innerHTML = playerCards[cardIndexes[j]].power;
             j++;
         }
 
-        // Reveal each card one by one with a delay of 100ms
+        // Показ каждой карты одна за другой с задержкой в 100 мс
         setTimeout(function(card, j){
             return function() {
                 card.classList.remove("prepared");
@@ -362,7 +366,7 @@ function revealCards(){
         }(card,i), parseInt(i+1) * 200);
     }
 
-    // Display the hacker card
+    // Отображение карты хакера
     hackerCardEl.querySelector(".text").innerHTML = hackerCard.description;
     hackerCardEl.querySelector(".power").innerHTML = hackerCard.power;
 }

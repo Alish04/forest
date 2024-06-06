@@ -267,7 +267,7 @@ button:active {
 }
 
 .winner-message {
-    color: white;
+    color: rgba(0, 0, 0, 0.49);
     font-size: 22px;
     font-weight: 700;
     position: relative;
@@ -527,5 +527,24 @@ button[disabled=true] {
 
 .player-area .thumbnail img {
     height: 50vh;
+}
+
+
+button {
+    padding: 10px 20px;
+    border-radius: 7px;
+    border: 1px solid rgb(0, 128, 128);
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 2px;
+    background: transparent;
+    color: #233a3a;
+    overflow: hidden;
+    box-shadow: 0 0 0 0 transparent;
+    -webkit-transition: all 0.2s ease-in;
+    -moz-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+    margin-right: 10px; /* Отступ между кнопками */
 }
 

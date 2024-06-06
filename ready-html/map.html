@@ -1,28 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Устанавливает тип документа как HTML5 и язык страницы как английский -->
     <meta charset="UTF-8">
+    <!-- Задает кодировку страницы UTF-8 -->
     <title>Interactive Game Map</title>
+    <!-- Устанавливает заголовок страницы как "Interactive Game Map" -->
     <link rel="stylesheet" href="css/map.css">
+    <!-- Подключает внешний CSS файл для стилизации страницы карты -->
 </head>
 <body>
-    <div class="topnav">
-        <a class="active" href="profile.html">Профиль</a>
-    </div>
+<!-- Начало тела документа -->
+<div class="topnav">
+    <!-- Навигационная панель -->
+    <a class="active" href="profile.html">Профиль</a>
+    <!-- Ссылка на страницу профиля, отмеченная как активная -->
+</div>
 
-    <div id="gameMap">
-        <!-- Adjust the 'top' and 'left' percentages to match the fireflies' positions. -->
-        <a href="lesson1.html" class="level-point" data-level="1" style="top: 84%; left: 82%;">1</a>
-        <a href="lesson2.html" class="level-point" data-level="2" style="top: 46%; left: 60%;">2</a>
-        <a href="lesson3.html" class="level-point" data-level="3" style="top: 70%; left: 48%;">3</a>
-        <a href="lesson4.html" class="level-point" data-level="4" style="top: 70%; left: 21%;">4</a>
-        <a href="lesson5.html" class="level-point" data-level="5" style="top: 37%; left: 18%;">5</a>
-        <a href="lesson6.html" class="level-point" data-level="6" style="top: 20%; left: 32%;">6</a>
-        <a href="lesson7.html" class="level-point" data-level="7" style="top: 13%; left: 49%;">7</a>
-        <!-- Add additional level points as needed -->
-    </div>
+<div id="gameMap">
+    <!-- Контейнер для интерактивной игровой карты -->
+    <!-- Комментарий: Настройте проценты 'top' и 'left', чтобы соответствовать позициям светлячков. -->
+    <a href="lesson1.html" class="level-point" data-level="1" style="top: 84%; left: 82%;">1</a>
+    <!-- Ссылка на первый урок с указанием позиции на карте -->
+    <a href="lesson2.html" class="level-point" data-level="2" style="top: 46%; left: 60%;">2</a>
+    <!-- Ссылка на второй урок с указанием позиции на карте -->
+    <a href="lesson3.html" class="level-point" data-level="3" style="top: 70%; left: 48%;">3</a>
+    <!-- Ссылка на третий урок с указанием позиции на карте -->
+    <a href="lesson4.html" class="level-point" data-level="4" style="top: 70%; left: 21%;">4</a>
+    <!-- Ссылка на четвертый урок с указанием позиции на карте -->
+    <a href="lesson5.html" class="level-point" data-level="5" style="top: 37%; left: 18%;">5</a>
+    <!-- Ссылка на пятый урок с указанием позиции на карте -->
+    <a href="lesson6.html" class="level-point" data-level="6" style="top: 20%; left: 32%;">6</a>
+    <!-- Ссылка на шестой урок с указанием позиции на карте -->
+    <a href="lesson7.html" class="level-point" data-level="7" style="top: 13%; left: 49%;">7</a>
+    <!-- Ссылка на седьмой урок с указанием позиции на карте -->
+    <!-- Добавьте дополнительные точки уровней по мере необходимости -->
+</div>
 
-    <script src="js/map.js"></script>
-    <script src="app.js"></script>
+<script src="js/map.js"></script>
+<!-- Подключает внешний JavaScript файл для логики карты -->
+<script src="app.js"></script>
+<!-- Подключает внешний JavaScript файл для дополнительных скриптов -->
 </body>
 </html>
+<!-- Конец документа -->

@@ -1,29 +1,47 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+    <!-- Устанавливает тип документа как HTML5 и язык страницы как русский -->
     <meta charset="UTF-8">
+    <!-- Задает кодировку страницы UTF-8 -->
     <title>Профиль пользователя</title>
+    <!-- Устанавливает заголовок страницы как "Профиль пользователя" -->
 
     <script src="app.js"></script>
+    <!-- Подключает внешний JavaScript файл для скриптов -->
     <link rel="stylesheet" href="css/profile.css">
+    <!-- Подключает внешний CSS файл для стилизации страницы профиля -->
     <script src="js/profile.js"></script>
+    <!-- Подключает другой внешний JavaScript файл для скриптов, связанных с профилем -->
 </head>
 <body>
+<!-- Начало тела документа -->
 
-    <div class="topnav">
-        <a class="active" href="map.html">Главная</a>
+<div class="topnav">
+    <!-- Навигационная панель -->
+    <a class="active" href="map.html">Главная</a>
+    <!-- Ссылка на главную страницу, отмеченная как активная -->
+</div>
+
+<form action="/profile" method="get">
+    <!-- Форма для профиля пользователя, отправляемая с методом GET на URL "/profile" -->
+    <div class="user-box">
+        <!-- Контейнер для отображения данных профиля пользователя -->
+        <p>ПРОФИЛЬ ПОЛЬЗОВАТЕЛЯ</p>
+        <!-- Заголовок профиля пользователя -->
+        <p class="firstName">Имя: <span id="firstName"></span></p>
+        <!-- Отображает имя пользователя с id "firstName" -->
+        <p class="lastName">Фамилия: <span id="lastName"></span></p>
+        <!-- Отображает фамилию пользователя с id "lastName" -->
+        <p class="email">Почта: <span id="email"></span></p>
+        <!-- Отображает email пользователя с id "email" -->
+        <p class="age">Возраст: <span id="age"></span></p>
+        <!-- Отображает возраст пользователя с id "age" -->
+        <p class="completedLevel">Завершенный уровень: <span id="completedLevel"></span></p>
+        <!-- Отображает завершенный уровень пользователя с id "completedLevel" -->
     </div>
-
-    <form action="/profile" method="get">
-        <div class="user-box">
-            <p>ПРОФИЛЬ ПОЛЬЗОВАТЕЛЯ</p>
-            <p class="firstName">Имя: <span id="firstName"></span></p>
-            <p class="lastName">Фамилия: <span id="lastName"></span></p>
-            <p class="email">Почта: <span id="email"></span></p>
-            <p class="age">Возраст: <span id="age"></span></p>
-            <p class="completedLevel">Завершенный уровень: <span id="completedLevel"></span></p>
-        </div>
-    </form>
+</form>
 
 </body>
 </html>
+<!-- Конец документа -->
